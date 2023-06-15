@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\User as UserModel;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $data = UserModel::get(); 
+    return view('welcome', ['data'=>$data]);
 });
+
