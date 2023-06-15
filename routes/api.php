@@ -22,5 +22,5 @@ Route::group(['prefix'=>'user'] , function (){
     Route::get('{id}/edit' , [UserController::class , 'edit']); 
     Route::get('{id}' , [UserController::class , 'show']); 
     Route::delete('{id}' , [UserController::class , 'destroy']); 
-    Route::put('{id}' , [UserController::class , 'update']); 
+    Route::post('{id}/update' , [UserController::class , 'update']);//it should use PUT  but php PUT method doesn't send file 
 }); 

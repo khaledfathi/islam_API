@@ -1,9 +1,9 @@
 /**
  * custom ajax function for backend REST API 
  * @param {string} url 
- * @param {string} method 
- * @param {object} data 
- * @param {Element} filesToUpload 
+ * @param {string} method [GET, POST, PUT, DELETE]
+ * @param {object} data  
+ * @param {Element} filesToUpload this element should have attribute (name = 'file')
  * @returns {Promise} json response as object 
  */
 async function ajax (url , method='GET' , data={} , filesToUpload=null){
@@ -27,7 +27,10 @@ async function ajax (url , method='GET' , data={} , filesToUpload=null){
             method: method, // GET, POST, PUT, DELETE, etc.
             mode: "cors", // no-cors, *cors, same-origin
             cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
-            credentials: "same-origin", // include, *same-origin, omit            
+            credentials: "same-origin", // include, *same-origin, omit 
+            headers:{
+                // 'Content-type': 'multipart/form-data'
+            },
             body: formData 
         });
         return response.json(); 
