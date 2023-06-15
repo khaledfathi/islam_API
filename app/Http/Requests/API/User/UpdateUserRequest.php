@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Requests\API;
+namespace App\Http\Requests\API\User;
 
 use App\Enum\UserType;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Validation\Rules\Enum;
 
-class StoreUserRequest extends FormRequest
+class UpdateUserRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,19 +25,19 @@ class StoreUserRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name'=>'required',
-            'email'=>'required|email|unique:users',
-            'password'=>'required',
-            'phone'=>'nullable|numeric',
-            'type'=>['required', new Enum(UserType::class)],
+            'name'=>'sometimes|required',
+            'email'=>['sometimes' , 'required' ,'email','unique:users,email,'.$this->id],
+            'password'=>'sometimes|required',
+            'phone'=>'sometimes|required|numeric',
+            'type'=>['sometimes' , 'required', new Enum(UserType::class)],
         ];
     }
     protected function failedValidation(\Illuminate\Contracts\Validation\Validator $validator)
     {
         throw new HttpResponseException(response()->json([
             'status' => false,
-            'msg'=>'one one more fileds is invalid !',
-            'errors' => $validator->errors(),
+            'msg'=>'one or more fileds is invalid !',
+            'errors' => $validator->errors()->all(),
         ], 200));
     }
 }

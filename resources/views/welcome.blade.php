@@ -11,6 +11,7 @@
     <input type="file" id="file-upload" name="file">
     <button id="send">Send</button>
 <form action="" enctype="multipart/form-data"></form>
+    <script src="{{asset('libCustomAjax_v1.js')}}"></script>
     <script src="{{asset('js.js')}}"></script>
 </body>
 </html>
