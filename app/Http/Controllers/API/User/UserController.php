@@ -5,24 +5,26 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\API\User\StoreUserRequest;
 use App\Http\Requests\API\User\UpdateUserRequest;
 use App\Models\User as UserModel;
+use App\Repository\Contract\UserRepositoryContract;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 
 class UserController extends Controller
 {
-    //PRIVATE METHOD
-        //
-
-    //PUBLIC METHOD 
-
+    public UserRepositoryContract $uesrProvider ; 
+    public function __construct(
+        UserRepositoryContract $userProvider
+    ){
+        $this->uesrProvider = $userProvider; 
+    }
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
         return response()->json([
-            'data'=>UserModel::get(),
+            'data'=>$this->uesrProvider->index(),
         ]); 
     }
 
@@ -32,14 +34,7 @@ class UserController extends Controller
     public function create()
     {
         return response()->json([
-            'data'=>[
-                'name'=>'required ',
-                'email' => 'required , unique , email only',
-                'password'=>'required', 
-                'type' => "required , accept these value ['admin' , 'user' , 'suppler' , 'doctor']",
-                'phone'=> 'optional , number only ',
-                'image'=> 'optional , accepted type [jpg,jpge,bmp,png,tiff,webp,heif] , max size: 10000 KB ',
-            ]
+            'data'=>$this->uesrProvider->create() 
         ]); 
     }
 
@@ -62,7 +57,7 @@ class UserController extends Controller
             $data['image']=uploadeFile($file , 'user-image'); 
         }
 
-        $record = UserModel::create($data); 
+        $record = $this->uesrProvider->store($data); 
         return response()->json([
             'status'=>true,
             'msg'=>"User has been stored .",
@@ -75,7 +70,7 @@ class UserController extends Controller
      */
     public function show(Request $request)
     {
-        $found = UserModel::find($request->id); 
+        $found = $this->uesrProvider->show($request->id); 
         if ($found){
             return response()->json([
                 'status'=>true,
@@ -94,7 +89,7 @@ class UserController extends Controller
      */
     public function edit(Request $request)
     {
-        $found = UserModel::find($request->id); 
+        $found = $this->uesrProvider->edit($request->id); 
         if ($found){
             return response()->json([
                 'status'=>true,
@@ -115,7 +110,7 @@ class UserController extends Controller
     {
         //prepearing data
         $data = (array)$request->all(); 
-        $found = UserModel::find($request->id);
+        $found = $this->uesrProvider->show($request->id);
         if ($found){            
             if ($request->has('file')){
                 $file= $request->file('file'); 
@@ -124,7 +119,7 @@ class UserController extends Controller
                 ($found->image)?Storage::delete($found->image): null;
             }
             ($request->has('password'))?Hash::make($request->password):null; 
-            $update = $found->update($data);
+            $update = $this->uesrProvider->update($data , $request->id);
             if ($update){
                 return response()->json([
                     'status'=>true,
@@ -135,7 +130,6 @@ class UserController extends Controller
                     'status'=>false,
                     'msg'=>'Validation error', 
                 ]);
-               
             }
         }
             return response()->json([
@@ -147,12 +141,12 @@ class UserController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Request $request)
     {
-        $found = UserModel::find($id); 
-        if ($found){
-            ($found->image)?Storage::delete($found->image):null; 
-            $found->delete(); 
+        $record  = $this->uesrProvider->show($request->id);
+        if ($record){
+            ($record->image)?Storage::delete($record->image):null; 
+            $this->uesrProvider->destroy($request->id); 
             return response()->json([
                 'status'=>true,
                 'msg'=>'User has been deleted successfuly .'

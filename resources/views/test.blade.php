@@ -26,8 +26,6 @@
     <script src="{{ asset('js.js') }}"></script>
     {{-- / Test --}}
 
-
-
 </body>
 
 </html>

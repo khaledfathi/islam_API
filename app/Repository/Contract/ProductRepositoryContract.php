@@ -2,7 +2,7 @@
 
 namespace App\Repository\Contract; 
 
-interface UserRepositoryContract {
+interface ProductRepositoryContract {
     public function index ():object; 
     public function store (array $data):object ; 
     public function show(mixed $id):object|null; 

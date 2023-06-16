@@ -4,19 +4,27 @@ namespace App\Http\Controllers\API\Product;
 
 use App\Http\Controllers\Controller;
 use App\Models\ProductModel;
+use App\Repository\Contract\ProductRepositoryContract;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
+    public ProductRepositoryContract $productProvider; 
+    public function __construct(
+        ProductRepositoryContract $productProvider
+    )
+    {
+       $this->productProvider = $productProvider; 
+    }
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
         return response()->json([
-            'data'=> ProductModel::get() 
+            'data'=> $this->productProvider->index() 
         ]); 
     }
 
@@ -26,14 +34,7 @@ class ProductController extends Controller
     public function create()
     {
         return response()->json([
-            'data'=>[
-                'name'=>'required ',
-                'price' => 'required , integer only ',
-                'description'=>'optional ', 
-                'category' => "required , accept these value ['food' ,'toys','accessories','beds','grooming']",
-                'image'=> 'required , accepted type [jpg,jpge,bmp,png,tiff,webp,heif] , max size: 10000 KB ',
-                'user_id' => 'optional , file '
-            ]
+            'data'=>$this->productProvider->create()
         ]); 
     }
 
@@ -56,7 +57,7 @@ class ProductController extends Controller
             $data['image']=uploadeFile($file , 'product-image'); 
         }
 
-        $record = ProductModel::create($data); 
+        $record = $this->productProvider->store($data); 
         return response()->json([
             'status'=>true,
             'msg'=>"Product has been stored .",
@@ -69,7 +70,7 @@ class ProductController extends Controller
      */
     public function show(Request $request)
     {
-        $found =  ProductModel::find($request->id); 
+        $found = $this->productProvider->show($request->id); 
         if ($found){
             return response()->json([
                 'status'=>true,
@@ -89,7 +90,7 @@ class ProductController extends Controller
      */
     public function edit(Request $request)
     {
-        $found =  ProductModel::find($request->id); 
+        $found = $this->productProvider->show($request->id); 
         if ($found){
             return response()->json([
                 'status'=>true,
@@ -106,20 +107,20 @@ class ProductController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request)
     {
         //prepearing data
         $data = (array)$request->all(); 
-        $found = ProductModel::find($request->id);
-        if ($found){
+        $record =$this->productProvider->show($request->id); 
+        if ($record){
             if ($request->has('file')){
                 $file= $request->file('file'); 
                 $data['image']=uploadeFile($file , 'product-image'); 
                 //delete old file  
-                ($found->image)?Storage::delete($found->image): null;
+                ($record->image)?Storage::delete($record->image): null;
             }
             //update record
-            $update = $found->update($data);
+            $update = $this->productProvider->update($data , $request->id);
             if ($update){
                 return response()->json([
                     'status'=>true,
@@ -130,7 +131,6 @@ class ProductController extends Controller
                     'status'=>false,
                     'msg'=>'Validation error', 
                 ]);
-               
             }
         }
     }
@@ -140,8 +140,9 @@ class ProductController extends Controller
      */
     public function destroy(Request $request)
     {
-        $found = ProductModel::find($request->id); 
+        $found = $this->productProvider->show($request->id); 
         if ($found){
+            $this->productProvider->destroy($request->id); 
             return response()->json([
                 'status'=>true, 
                 'msg'=>'Product has been deleted successfuly.'
@@ -151,6 +152,5 @@ class ProductController extends Controller
             'status'=>false,
             'msg'=>'product is not exist !',
         ]); 
-
     }
 }

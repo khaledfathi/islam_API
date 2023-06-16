@@ -1,0 +1,14 @@
+table , th , td{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th , td {
+    padding: 5px;
+}
+.user-button{
+    width: 150px;
+    height: 40px;
+    font-size: 13pt;
+    font-weight: bold;
+    margin: 15px;
+}

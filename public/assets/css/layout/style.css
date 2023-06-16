@@ -1,0 +1,17 @@
+.button-div  a{
+    display: inline-block;
+    text-decoration: none;
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 13pt;
+    font-weight: bold;
+    background-color: gray;
+    color:white; 
+}
+.button-div{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}

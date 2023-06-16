@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\Home\HomeController;
-use App\Models\User as UserModel;
+use App\Http\Controllers\Product\ProductController;
+use App\Http\Controllers\Service\ServiceController;
+use App\Http\Controllers\User\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,12 +17,47 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    $data = UserModel::get(); 
-    return view('welcome', ['data'=>$data]);
-});
+//root 
 
-Route::get('/' , [HomeController::class , 'index'])->name('root'); 
-Route::get('/user-table' , [HomeController::class , 'userTable'])->name('userTable'); 
-Route::get('/product-table' , [HomeController::class , 'ProductTable'])->name('ProductTable'); 
+Route::get('/' , fn ()=>redirect(route('home')))->name('root'); 
+
+//home
+Route::get('home' , [HomeController::class , 'index'])->name('home'); 
+
+//API 
+Route::get('api', fn ()=> view('api.index'))->name('api'); 
+
+//users
+Route::group(['prefix'=>'user'] , function (){
+    Route::get('' , [UserController::class , 'index'])->name('user.index'); 
+    Route::get('{id}' , [UserController::class , 'show'])->name('user.show'); 
+    Route::get('create' , [UserController::class , 'create'])->name('user.create'); 
+    Route::get('{id}/edit' , [UserController::class , 'edit'])->name('user.edit'); 
+    Route::get('{id}/destroy' , [UserController::class , 'destroy'])->name('user.destroy'); 
+}); 
+
+//products
+route::group(['prefix'=>'product'] , function (){
+    route::get('' , [productcontroller::class , 'index'])->name('product.index'); 
+    route::get('{id}' , [productcontroller::class , 'show'])->name('product.show'); 
+    route::get('create' , [productcontroller::class , 'create'])->name('product.create'); 
+    route::get('{id}/edit' , [productcontroller::class , 'edit'])->name('product.edit'); 
+    route::get('{id}/destroy' , [productcontroller::class , 'destroy'])->name('product.destroy'); 
+}); 
+
+//Services
+route::group(['prefix'=>'service'] , function (){
+    route::get('' , [ServiceController::class , 'index'])->name('service.index'); 
+    route::get('{id}' , [ServiceController::class , 'show'])->name('service.show'); 
+    route::get('create' , [ServiceController::class , 'create'])->name('service.create'); 
+    route::get('{id}/edit' , [ServiceController::class , 'edit'])->name('service.edit'); 
+    route::get('{id}/destroy' , [ServiceController::class , 'destroy'])->name('service.destroy'); 
+}); 
+
+
+
+// ######################
+Route::get('test' , function (){
+    return view('test'); 
+}); 
 
