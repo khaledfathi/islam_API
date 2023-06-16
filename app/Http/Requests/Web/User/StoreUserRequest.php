@@ -27,7 +27,7 @@ class StoreUserRequest extends FormRequest
             'name'=>'required',
             'email'=>'required|email|unique:users',
             'password'=>'required',
-            'phone'=>'nullable|numeric',
+            'phone'=>'nullable',
             'type'=>['required', new Enum(UserType::class)],
             'image'=>'nullable|mimes:jpg,jpge,bmp,png,tiff,webp,heif|max:10000'
         ];

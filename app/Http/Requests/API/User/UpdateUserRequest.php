@@ -28,7 +28,7 @@ class UpdateUserRequest extends FormRequest
             'name'=>'sometimes|required',
             'email'=>['sometimes' , 'required' ,'email','unique:users,email,'.$this->id],
             'password'=>'sometimes|required',
-            'phone'=>'sometimes|required|numeric',
+            'phone'=>'sometimes|required',
             'type'=>['sometimes' , 'required', new Enum(UserType::class)],
         ];
     }
