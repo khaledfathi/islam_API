@@ -16,11 +16,11 @@
         <hr>
     </div>
     <div class="button-div">
-        <a href="{{ route('user.index') }}"> Users </a>
-        <a href="{{ route('product.index') }}"> Products </a>
-        <a href="{{ route('service.index') }}"> service </a>
-        <a href="{{ route('api') }}"> API </a>
-    </div>
+        <a class="@yield('active-user')" href="{{ route('user.index') }}" > Users </a>
+        <a class="@yield('active-product')" href="{{ route('product.index') }}"> Products </a>
+        <a class="@yield('active-service')" href="{{ route('service.index') }}"> service </a>
+        <a class="@yield('active-api')" href="{{ route('api') }}"> API </a>
+    </div>    
     @yield('content')
     @yield('scripts')
 </body>

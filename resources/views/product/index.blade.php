@@ -1,5 +1,6 @@
 @extends('layout.main')
 @section('title', 'Product')
+@section('active-product' , 'active-button')
 @section('links')
     <link rel="stylesheet" href="{{asset('assets/css/product/style.css')}}">
 @endsection
@@ -12,7 +13,7 @@
             <h3>Product table</h3>
         </div>
         <div>
-            <button class="user-button">New Product</button>
+            <a href="{{route('product.create')}}" class="user-button">New Product</a>
         </div>
         {{-- user data --}}
         <div>
@@ -21,31 +22,31 @@
                     <th>ID</th>
                     <th>Name</th>
                     <th>Price</th>
-                    <th>Description</th>
                     <th>Category</th>
+                    <th>Description</th>
                     <th>Image</th>
                     <th>Edit</th>
                     <th>Delete</th>
                 </thead>
                 <tbody>
-                    {{-- @if ($users)
-                        @foreach ($users as $user)
+                    @if ($products)
+                        @foreach ($products as $product)
                             <tr>
-                                <td>{{ $user->id }}</td>
-                                <td>{{ $user->name }}</td>
-                                <td>{{ $user->email }}</td>
-                                <td>{{ $user->type }}</td>
-                                <td>{{ $user->phone }}</td>
-                                @if ($user->image)
-                                    <td><a href="{{ asset($user->image) }}">Image</a></td>
+                                <td>{{ $product->id }}</td>
+                                <td>{{ $product->name }}</td>
+                                <td>{{ $product->price }}</td>
+                                <td>{{ $product->category }}</td>
+                                <td>{{ $product->description }}</td>
+                                @if ($product->image)
+                                    <td><a href="{{ asset($product->image) }}">Image</a></td>
                                 @else
                                     <td>---</td>
                                 @endif
-                                <td><a href="{{ route('user.edit', $user->id) }}">Edit</a></td>
-                                <td><a href="{{ route('user.destroy', $user->id) }}">Delete</a></td>
+                                <td><a href="{{ route('product.edit', $product->id) }}">Edit</a></td>
+                                <td><a href="{{ route('product.destroy', $product->id) }}">Delete</a></td>
                             </tr>
                         @endforeach
-                    @endif --}}
+                    @endif
                 </tbody>
             </table>
         </div>

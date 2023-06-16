@@ -1,5 +1,6 @@
 @extends('layout.main')
 @section('title', 'Users | Edit')
+@section('active-user' , 'active-button')
 @section('links')
     <link rel="stylesheet" href="{{ asset('assets/css/user/edit.css') }}">
 @endsection

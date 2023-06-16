@@ -40,11 +40,13 @@ Route::group(['prefix'=>'user'] , function (){
 
 //products
 route::group(['prefix'=>'product'] , function (){
-    route::get('' , [productcontroller::class , 'index'])->name('product.index'); 
-    route::get('{id}' , [productcontroller::class , 'show'])->name('product.show'); 
-    route::get('create' , [productcontroller::class , 'create'])->name('product.create'); 
-    route::get('edit/{id}' , [productcontroller::class , 'edit'])->name('product.edit'); 
-    route::get('destroy/{id}' , [productcontroller::class , 'destroy'])->name('product.destroy'); 
+    Route::get('' , [ProductController::class , 'index'])->name('product.index'); 
+    Route::get('show/{id}' , [ProductController::class , 'show'])->name('product.show'); 
+    Route::get('create' , [ProductController::class , 'create'])->name('product.create'); 
+    Route::post('store' , [ProductController::class , 'store'])->name('product.store'); 
+    Route::get('edit/{id}' , [ProductController::class , 'edit'])->name('product.edit'); 
+    Route::post('update' , [ProductController::class , 'update'])->name('product.update'); 
+    Route::get('destroy/{id}' , [ProductController::class , 'destroy'])->name('product.destroy'); 
 }); 
 
 //Services
