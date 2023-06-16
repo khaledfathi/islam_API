@@ -7,16 +7,17 @@ use App\Http\Requests\API\User\UpdateUserRequest;
 use App\Models\User as UserModel;
 use App\Repository\Contract\UserRepositoryContract;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 
 class UserController extends Controller
 {
-    public UserRepositoryContract $uesrProvider ; 
+    public UserRepositoryContract $userProvider ; 
     public function __construct(
         UserRepositoryContract $userProvider
     ){
-        $this->uesrProvider = $userProvider; 
+        $this->userProvider = $userProvider; 
     }
     /**
      * Display a listing of the resource.
@@ -24,7 +25,7 @@ class UserController extends Controller
     public function index()
     {
         return response()->json([
-            'data'=>$this->uesrProvider->index(),
+            'data'=>$this->userProvider->index(),
         ]); 
     }
 
@@ -34,7 +35,7 @@ class UserController extends Controller
     public function create()
     {
         return response()->json([
-            'data'=>$this->uesrProvider->create() 
+            'data'=>$this->userProvider->create() 
         ]); 
     }
 
@@ -57,7 +58,7 @@ class UserController extends Controller
             $data['image']=uploadeFile($file , 'user-image'); 
         }
 
-        $record = $this->uesrProvider->store($data); 
+        $record = $this->userProvider->store($data); 
         return response()->json([
             'status'=>true,
             'msg'=>"User has been stored .",
@@ -70,7 +71,7 @@ class UserController extends Controller
      */
     public function show(Request $request)
     {
-        $found = $this->uesrProvider->show($request->id); 
+        $found = $this->userProvider->show($request->id); 
         if ($found){
             return response()->json([
                 'status'=>true,
@@ -89,7 +90,7 @@ class UserController extends Controller
      */
     public function edit(Request $request)
     {
-        $found = $this->uesrProvider->edit($request->id); 
+        $found = $this->userProvider->edit($request->id); 
         if ($found){
             return response()->json([
                 'status'=>true,
@@ -110,16 +111,16 @@ class UserController extends Controller
     {
         //prepearing data
         $data = (array)$request->all(); 
-        $found = $this->uesrProvider->show($request->id);
+        $found = $this->userProvider->show($request->id);
         if ($found){            
             if ($request->has('file')){
                 $file= $request->file('file'); 
                 $data['image']=uploadeFile($file , 'user-image'); 
 
-                ($found->image)?Storage::delete($found->image): null;
+                ($found->image)?File::delete($found->image): null;
             }
             ($request->has('password'))?Hash::make($request->password):null; 
-            $update = $this->uesrProvider->update($data , $request->id);
+            $update = $this->userProvider->update($data , $request->id);
             if ($update){
                 return response()->json([
                     'status'=>true,
@@ -143,10 +144,10 @@ class UserController extends Controller
      */
     public function destroy(Request $request)
     {
-        $record  = $this->uesrProvider->show($request->id);
+        $record  = $this->userProvider->show($request->id);
         if ($record){
-            ($record->image)?Storage::delete($record->image):null; 
-            $this->uesrProvider->destroy($request->id); 
+            ($record->image)?File::delete($record->image):null; 
+            $this->userProvider->destroy($request->id); 
             return response()->json([
                 'status'=>true,
                 'msg'=>'User has been deleted successfuly .'

@@ -7,6 +7,7 @@ use App\Models\ProductModel;
 use App\Repository\Contract\ProductRepositoryContract;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
@@ -117,7 +118,7 @@ class ProductController extends Controller
                 $file= $request->file('file'); 
                 $data['image']=uploadeFile($file , 'product-image'); 
                 //delete old file  
-                ($record->image)?Storage::delete($record->image): null;
+                ($record->image)?File::delete($record->image): null;
             }
             //update record
             $update = $this->productProvider->update($data , $request->id);
@@ -142,7 +143,8 @@ class ProductController extends Controller
     {
         $found = $this->productProvider->show($request->id); 
         if ($found){
-            $this->productProvider->destroy($request->id); 
+            ($found->image)?File::delete($found->image):null;  
+            $this->productProvider->destroy($request->id);
             return response()->json([
                 'status'=>true, 
                 'msg'=>'Product has been deleted successfuly.'

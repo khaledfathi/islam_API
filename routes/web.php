@@ -30,10 +30,12 @@ Route::get('api', fn ()=> view('api.index'))->name('api');
 //users
 Route::group(['prefix'=>'user'] , function (){
     Route::get('' , [UserController::class , 'index'])->name('user.index'); 
-    Route::get('{id}' , [UserController::class , 'show'])->name('user.show'); 
+    Route::get('show/{id}' , [UserController::class , 'show'])->name('user.show'); 
     Route::get('create' , [UserController::class , 'create'])->name('user.create'); 
-    Route::get('{id}/edit' , [UserController::class , 'edit'])->name('user.edit'); 
-    Route::get('{id}/destroy' , [UserController::class , 'destroy'])->name('user.destroy'); 
+    Route::post('store' , [UserController::class , 'store'])->name('user.store'); 
+    Route::get('edit/{id}' , [UserController::class , 'edit'])->name('user.edit'); 
+    Route::post('update' , [UserController::class , 'update'])->name('user.update'); 
+    Route::get('destroy/{id}' , [UserController::class , 'destroy'])->name('user.destroy'); 
 }); 
 
 //products
@@ -41,17 +43,17 @@ route::group(['prefix'=>'product'] , function (){
     route::get('' , [productcontroller::class , 'index'])->name('product.index'); 
     route::get('{id}' , [productcontroller::class , 'show'])->name('product.show'); 
     route::get('create' , [productcontroller::class , 'create'])->name('product.create'); 
-    route::get('{id}/edit' , [productcontroller::class , 'edit'])->name('product.edit'); 
-    route::get('{id}/destroy' , [productcontroller::class , 'destroy'])->name('product.destroy'); 
+    route::get('edit/{id}' , [productcontroller::class , 'edit'])->name('product.edit'); 
+    route::get('destroy/{id}' , [productcontroller::class , 'destroy'])->name('product.destroy'); 
 }); 
 
 //Services
 route::group(['prefix'=>'service'] , function (){
     route::get('' , [ServiceController::class , 'index'])->name('service.index'); 
-    route::get('{id}' , [ServiceController::class , 'show'])->name('service.show'); 
+    route::get('show/{id}' , [ServiceController::class , 'show'])->name('service.show'); 
     route::get('create' , [ServiceController::class , 'create'])->name('service.create'); 
-    route::get('{id}/edit' , [ServiceController::class , 'edit'])->name('service.edit'); 
-    route::get('{id}/destroy' , [ServiceController::class , 'destroy'])->name('service.destroy'); 
+    route::get('edit/{id}' , [ServiceController::class , 'edit'])->name('service.edit'); 
+    route::get('destroy/{id}' , [ServiceController::class , 'destroy'])->name('service.destroy'); 
 }); 
 
 

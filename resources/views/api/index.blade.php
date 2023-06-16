@@ -69,7 +69,7 @@
                 <tr>
                     <td>http://localhost/api/user/{id}</td>
                     <td>DELETE</td>
-                    <td>{id} id</td>
+                    <td>{id} user id</td>
                     <td>delete user by its ID</td>
                     <td>{status:false , msg:string} | {status:true , msg:string}</td>
                 </tr>

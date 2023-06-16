@@ -12,7 +12,7 @@
             <h3>Users Table</h3>
         </div>
         <div>
-            <button class="user-button">New User</button>
+            <a class="user-button" href="{{route('user.create')}}">New User</a>
         </div>
         {{-- user data --}}
         <div>
