@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\API;    
+namespace App\Http\Controllers\API\User;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\API\User\StoreUserRequest;
 use App\Http\Requests\API\User\UpdateUserRequest;
@@ -12,14 +12,7 @@ use Illuminate\Support\Facades\Storage;
 class UserController extends Controller
 {
     //PRIVATE METHOD
-
-    public function uploadeFile(object $file):string 
-    {
-        $fileName = rand(100,999).'_'.time().'.'.$file->extension() ;
-        $file->storeAs('user-image' , $fileName); 
-        $filePath = 'storage/user-image/'.$fileName;
-        return $filePath; 
-    }
+        //
 
     //PUBLIC METHOD 
 
@@ -38,14 +31,14 @@ class UserController extends Controller
      */
     public function create()
     {
-        return response([
+        return response()->json([
             'data'=>[
                 'name'=>'required ',
                 'email' => 'required , unique , email only',
                 'password'=>'required', 
                 'type' => "required , accept these value ['admin' , 'user' , 'suppler' , 'doctor']",
                 'phone'=> 'optional , number only ',
-                'image' => 'optional , file '
+                'image'=> 'optional , accepted type [jpg,jpge,bmp,png,tiff,webp,heif] , max size: 10000 KB ',
             ]
         ]); 
     }
@@ -66,7 +59,7 @@ class UserController extends Controller
         //store image file
         if ($request->has('file')){
             $file = $request->file('file'); 
-            $data['image']=$this->uploadeFile($file); 
+            $data['image']=uploadeFile($file , 'user-image'); 
         }
 
         $record = UserModel::create($data); 
@@ -126,10 +119,11 @@ class UserController extends Controller
         if ($found){            
             if ($request->has('file')){
                 $file= $request->file('file'); 
-                $data['image']=$this->uploadeFile($file); 
+                $data['image']=uploadeFile($file , 'user-image'); 
 
                 ($found->image)?Storage::delete($found->image): null;
             }
+            ($request->has('password'))?Hash::make($request->password):null; 
             $update = $found->update($data);
             if ($update){
                 return response()->json([
@@ -157,6 +151,7 @@ class UserController extends Controller
     {
         $found = UserModel::find($id); 
         if ($found){
+            ($found->image)?Storage::delete($found->image):null; 
             $found->delete(); 
             return response()->json([
                 'status'=>true,
