@@ -2,7 +2,9 @@
 
 namespace App\Http\Requests\Web\User;
 
+use App\Enum\UserType;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rules\Enum;
 
 class UpdateUserRequest extends FormRequest
 {
@@ -22,7 +24,11 @@ class UpdateUserRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'name'=>'sometimes|required',
+            'email'=>['sometimes' , 'required' ,'email','unique:users,email,'.$this->id],
+            'password'=>'sometimes|required',
+            'phone'=>'sometimes|required|numeric',
+            'type'=>['sometimes' , 'required', new Enum(UserType::class)],
         ];
     }
 }
