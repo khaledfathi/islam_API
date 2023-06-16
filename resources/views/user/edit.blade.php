@@ -38,7 +38,7 @@
                 </div>
                 <div>
                     <label for="">Password<span style="color:red">*</span></label>
-                    <input type="password" name="password" id="" required >
+                    <input type="password" name="password" id="" >
                 </div>
                 <div>
                     <label for="">Type<span style="color:red">*</span></label>
