@@ -60,7 +60,7 @@ class ProductController extends Controller
     public function edit(Request $request)
     {
         $record = $this->productProvider->show($request->id); 
-        $users= $this->userProvider->index(); 
+        $users= $this->userProvider->index();
         $categories = Category::cases(); 
         return view('product.edit',[
             'record'=>$record,

@@ -48,7 +48,11 @@
                     <label for="">Category<span style="color:red">*</span></label>
                     <select name="category">
                         @foreach ($categories as $category)
-                            <option value="{{ $category->value }}">{{ $category->value }}</option>
+                        @if ($record->category == $category->value)
+                            <option selected value="{{ $category->value }}">{{ $category->value }}</option>
+                        @else 
+                            <option  value="{{ $category->value }}">{{ $category->value }}</option>
+                        @endif
                         @endforeach
                     </select>
                 </div>
