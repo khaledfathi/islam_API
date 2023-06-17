@@ -7,5 +7,5 @@ enum Category : string
     case  toys = 'toys'; 
     case accessories = 'accessories'; 
     case beds = 'beds';
-    case grooming = 'groomin'; 
+    case grooming = 'grooming'; 
 }

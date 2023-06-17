@@ -72,7 +72,6 @@ class ProductController extends Controller
     {
         //prepearing data
         $data = (array) $request->except('_token');
-        dd($request->all()); 
         $record = $this->productProvider->show($request->id);
         if ($record) {
             if ($request->has('image')) {
