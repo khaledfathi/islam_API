@@ -19,7 +19,7 @@ class AuthController extends Controller
         if (Auth::attempt(['email'=>$request->email , 'password'=>$request->password])){
             $record = $this->userProvider->showByEmail($request->email); 
             return response()->json([
-                'status'=>false,
+                'status'=>true,
                 'msg'=>'OK',
                 'record'=>$record
             ]); 
