@@ -79,7 +79,7 @@
     </div>
     {{-- /users API --}}
 
-    
+
     {{-- product API --}}
     <br><br>
     <div>
@@ -160,7 +160,7 @@
                 <th>Response</th>
             </thead>
             <tbody>
-          
+
                 <tr>
                     <td>http://localhost/api/register</td>
                     <td>POST</td>
@@ -169,7 +169,7 @@
                     <td>{status:false , msg:string , errors:[]} | {status:true , msg:string }</td>
                 </tr>
                 <tr>
-                    <td>http://localhost/api/product/create</td>
+                    <td>http://localhost/api/register/create</td>
                     <td>GET</td>
                     <td> --- </td>
                     <td>show table details</td>
@@ -178,7 +178,32 @@
             </tbody>
         </table>
     </div>
+    <br><br>
     {{-- / register API --}}
-   
+
+    {{-- auth  API --}}
+    <div>
+        <h3>Register User API</h3>
+        <table>
+            <thead>
+                <th>URL</th>
+                <th>Method</th>
+                <th>Parameter</th>
+                <th>Action</th>
+                <th>Response</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>http://localhost/api/auth/login</td>
+                    <td>POST</td>
+                    <td> --- </td>
+                    <td>authenticate user to login</td>
+                    <td>{status:false , msg:string} | {status:true , msg:string , record:{}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    {{-- / auth API --}}
+
     <br><br><br><br><br><br>
 @endsection
