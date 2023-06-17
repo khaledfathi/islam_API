@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\API\Auth\AuthController;
 use App\Http\Controllers\API\Product\ProductController;
 use App\Http\Controllers\API\RegisterController;
 use App\Http\Controllers\API\User\UserController;
@@ -43,3 +44,9 @@ route::group(['prefix'=>'register'] , function (){
     Route::post('', [RegisterController::class , 'store'])->name('register.store');
     Route::get('create', [RegisterController::class , 'create'])->name('register.create');
 });
+
+//auth
+route::group(['prefix'=>'auth'] , function (){
+    Route::post('login', [AuthController::class , 'login'])->name('auth.login');
+});
+

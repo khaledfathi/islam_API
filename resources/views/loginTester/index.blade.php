@@ -1,6 +1,6 @@
 @extends('layout.main')
 @section('title', 'Login Tester')
-@section('active-loginTester', 'active-button')
+@section('active-login-tester', 'active-button')
 @section('links')
     <link rel="stylesheet" href="{{ asset('assets/css/loginTester/style.css') }}">
 @endsection
