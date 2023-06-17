@@ -11,14 +11,14 @@ const send = document.querySelector('#send');
 //     user_id:1
 // }
 let data ={
-    name:'lllllls',
-    price:200,
-    category: '',
-    // description : '',
-    // user_id:4,
+    'name':'kkkk',
+    'email':'kkd@kk.com',
+    'phone':'dsa',
+    'password':'dasdas',
+    'type':'suppler',
 }
 function eventtAction (){
-    ajax('http://localhost/api/product' , 'post' , data , (fileUpload.value)?fileUpload:null).then((res)=>{
+    ajax('http://localhost/api/register' , 'post' , data , (fileUpload.value)?fileUpload:null).then((res)=>{
         console.log(res); 
     }); 
     // ajax('http://ah.khaledfathi.com/api/user/9/update' , 'post' , data , fileUpload).then((res)=>{

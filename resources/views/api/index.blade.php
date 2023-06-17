@@ -144,7 +144,41 @@
                 </tr>
             </tbody>
         </table>
-        <br><br><br><br><br><br>
+        <br><br>
     </div>
     {{-- / product API --}}
+
+    {{-- register API --}}
+    <div>
+        <h3>Product CRUD API</h3>
+        <table>
+            <thead>
+                <th>URL</th>
+                <th>Method</th>
+                <th>Parameter</th>
+                <th>Action</th>
+                <th>Response</th>
+            </thead>
+            <tbody>
+          
+                <tr>
+                    <td>http://localhost/api/register</td>
+                    <td>POST</td>
+                    <td> --- </td>
+                    <td>Register a New User </td>
+                    <td>{status:false , msg:string , errors:[]} | {status:true , msg:string }</td>
+                </tr>
+                <tr>
+                    <td>http://localhost/api/product/create</td>
+                    <td>GET</td>
+                    <td> --- </td>
+                    <td>show table details</td>
+                    <td>{data:{}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    {{-- / register API --}}
+   
+    <br><br><br><br><br><br>
 @endsection

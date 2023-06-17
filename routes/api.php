@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\API\Product\ProductController;
+use App\Http\Controllers\API\RegisterController;
 use App\Http\Controllers\API\User\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -35,4 +36,10 @@ Route::group(['prefix'=>'product'], function (){
     Route::get('{id}' , [ProductController::class , 'show']); 
     Route::delete('{id}' , [ProductController::class , 'destroy']); 
     Route::post('{id}/update' , [ProductController::class , 'update']);//it should use PUT  but php PUT method doesn't send file 
-}); 
+});
+
+//register
+route::group(['prefix'=>'register'] , function (){
+    Route::post('', [RegisterController::class , 'store'])->name('register.store');
+    Route::get('create', [RegisterController::class , 'create'])->name('register.create');
+});
