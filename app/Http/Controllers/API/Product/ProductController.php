@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\API\Product;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\API\Product\StoreProductRequest;
+use App\Http\Requests\API\Product\UpdateProductRequest;
 use App\Models\ProductModel;
 use App\Repository\Contract\ProductRepositoryContract;
 use Illuminate\Database\Eloquent\Model;
@@ -42,7 +44,7 @@ class ProductController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreProductRequest $request)
     {
         //preparing data to store 
         $data = [
@@ -108,7 +110,7 @@ class ProductController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request)
+    public function update(UpdateProductRequest $request)
     {
         //prepearing data
         $data = (array)$request->all(); 
