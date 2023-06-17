@@ -27,6 +27,10 @@ public function show(mixed $id):object | null
     {
         return UserModel::where('id', $id)->first(); 
     }
+    public function showByEmail(string $email):object|null
+    {
+        return UserModel::where('email', $email)->first(); 
+    }
     public function edit(mixed $id):object | null
     {
         return UserModel::where('id', $id)->first(); 

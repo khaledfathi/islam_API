@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Home\HomeController;
+use App\Http\Controllers\LoginTester\LoginTesterController;
 use App\Http\Controllers\Product\ProductController;
 use App\Http\Controllers\Service\ServiceController;
 use App\Http\Controllers\User\UserController;
@@ -59,6 +60,10 @@ route::group(['prefix'=>'service'] , function (){
 }); 
 
 
+route::group(['prefix'=>'login-tester'] , function (){
+    route::get('' , [LoginTesterController::class , 'index'])->name('loginTester.index'); 
+    route::get('login' , [LoginTesterController::class , 'login'])->name('loginTester.login'); 
+}); 
 
 
 // ######################

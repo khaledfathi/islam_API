@@ -20,6 +20,7 @@
         <a class="@yield('active-product')" href="{{ route('product.index') }}"> Products </a>
         <a class="@yield('active-service')" href="{{ route('service.index') }}"> service </a>
         <a class="@yield('active-api')" href="{{ route('api') }}"> API </a>
+        <a class="@yield('active-login-teste')" href="{{ route('loginTester.index') }}" style="width:140px;"> Login Tester </a>
     </div>    
     @yield('content')
     @yield('scripts')
