@@ -150,7 +150,7 @@
 
     {{-- register API --}}
     <div>
-        <h3>Product CRUD API</h3>
+        <h3>Register User API</h3>
         <table>
             <thead>
                 <th>URL</th>
