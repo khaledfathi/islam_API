@@ -2,31 +2,44 @@
 
 namespace App\Http\Controllers\Product;
 
+use App\Enum\Category;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Web\Product\StoreProductRequest;
+use App\Http\Requests\Web\Product\UpdateProductRequest;
 use App\Repository\Contract\ProductRepositoryContract;
+use App\Repository\Contract\UserRepositoryContract;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 
 class ProductController extends Controller
 {
     public ProductRepositoryContract $productProvider ; 
+    public UserRepositoryContract $userProvider ; 
     public function __construct(
-        ProductRepositoryContract $productProvider
+        ProductRepositoryContract $productProvider, 
+        UserRepositoryContract $userProvider
     )
     {
         $this->productProvider = $productProvider; 
+        $this->userProvider = $userProvider ; 
     }
     public function index (){
-        $products = $this->productProvider->index(); 
+        $products = $this->productProvider->index(leftJoinUsers:true); 
+        // dd($products); 
         return view('product.index',[
             'products'=>$products
         ]); 
     } 
     public function create()
     {
-        return view('product.create'); 
+        $users = $this->userProvider->index(); 
+        $categories = Category::cases(); 
+        return view('product.create' , [
+            'users'=> $users ,
+            'categories'=>$categories
+        ]); 
     }
-   public function store (Request $request)
+   public function store (StoreProductRequest $request)
     {
          //preparing data to store 
         $data = [
@@ -44,13 +57,34 @@ class ProductController extends Controller
         $record = $this->productProvider->store($data); 
         return  redirect(route('product.index'));
     }
-    public function edit(mixed $id)
+    public function edit(Request $request)
     {
-        return "product Edit page"; 
+        $record = $this->productProvider->show($request->id); 
+        $users= $this->userProvider->index(); 
+        $categories = Category::cases(); 
+        return view('product.edit',[
+            'record'=>$record,
+            'users'=>$users,
+            'categories'=>$categories, 
+        ]); 
     }
-    public function update(array $data , int $id)
+    public function update(UpdateProductRequest $request)
     {
-
+        //prepearing data
+        $data = (array) $request->except('_token');
+        dd($request->all()); 
+        $record = $this->productProvider->show($request->id);
+        if ($record) {
+            if ($request->has('image')) {
+                $file = $request->file('image');
+                $data['image'] = uploadeFile($file, 'product-image');
+                //delete old file  
+                ($record->image) ? File::delete($record->image) : null;
+            }
+            //update record
+            $update = $this->productProvider->update($data, $request->id);
+        }
+        return redirect(route('product.index')); 
     }
     public function destroy(Request $request)
     {

@@ -10,7 +10,7 @@
 @section('content')
     <div>
         <div>
-            <h3>Create New User</h3>
+            <h3>Edit User</h3>
         </div>
         <div class="errors">
             @if ($errors->any())
