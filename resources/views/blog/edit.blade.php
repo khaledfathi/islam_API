@@ -26,7 +26,7 @@
                 <div>
                     <label for="">Time<span style="color:red">*</span></label>
                     <input type="datetime-local" name="time" id="date-time" required
-                        value="{{ rtrim($record->time, ':00') }}">
+                        value="{{ substr($record->time , 0, -3) }}">
                 </div>
                 <div>
                     <label for="">Author<span style="color:red">*</span></label>
