@@ -17,7 +17,7 @@
             <hr>
             <div>
                 <h1>Title : {{$record->title}}  </h1>
-                <h2>Author : {{$record->user_id}}</h2>
+                <h2>Author : ID:{{$record->user_id}} | {{$record->user_name}} | {{$record->user_type}}</h2>
                 <h2>Time : {{$record->time}}</h2>
             </div>
             <hr>

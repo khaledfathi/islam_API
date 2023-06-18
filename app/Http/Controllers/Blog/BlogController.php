@@ -54,7 +54,7 @@ class BlogController extends Controller
      */
     public function show(Request $request)
     {
-        $record = $this->blogProvider->show($request->id); 
+        $record = $this->blogProvider->show($request->id , true); 
         return view('blog.show' , [
             'record'=>$record 
         ]); 
