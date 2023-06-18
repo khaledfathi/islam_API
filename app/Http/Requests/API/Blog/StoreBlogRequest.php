@@ -24,7 +24,7 @@ class StoreBlogRequest extends FormRequest
     {
         return [
             'user_id'=>'nullable|exists:users,id',
-            'time' => 'required|date_format:Y-m-d\ H:i', 
+            'time' => 'required|date_format:Y-m-d\TH:i', 
             'title'=>'required|', 
         ];
     }

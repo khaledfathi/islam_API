@@ -24,7 +24,7 @@ class UpdateBlogRequest extends FormRequest
     {
         return [
             'user_id'=>'nullable|exists:users,id',
-            'time' => 'sometimes|required|date_format:Y-m-d\ H:i', 
+            'time' => 'sometimes|required|date_format:Y-m-d\TH:i', 
             'title'=>'sometimes|required', 
         ];
     }
