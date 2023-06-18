@@ -29,7 +29,7 @@
             <hr>
             <div>
                 <br>
-                <h2>Article</h2>
+                <h2>Article :</h2>
                     {!!$record->article!!}
             </div>
         </div>

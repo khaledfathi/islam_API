@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\API\Blog;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\API\Blog\StoreBlogRequest;
+use App\Http\Requests\API\Blog\UpdateBlogRequest;
 use App\Repository\Contract\BlogRepositoryContract;
 use App\Repository\Contract\UserRepositoryContract;
 use Illuminate\Http\Request;
@@ -42,7 +44,7 @@ class BlogController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreBlogRequest $request)
     {
         //preparing data to store 
         $data = [
@@ -100,7 +102,7 @@ class BlogController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request)
+    public function update(UpdateBlogRequest $request)
     {
         $this->blogProvider->update((array)$request->all() , $request->id); 
         return response()->json([
