@@ -80,10 +80,10 @@
     {{-- /users API --}}
 
 
-    {{-- product API --}}
+    {{-- products API --}}
     <br><br>
     <div>
-        <h3>Product CRUD API</h3>
+        <h3>Products CRUD API</h3>
         <table>
             <thead>
                 <th>URL</th>
@@ -146,7 +146,76 @@
         </table>
         <br><br>
     </div>
-    {{-- / product API --}}
+    {{-- / products API --}}
+
+    {{-- Blog CRUD API --}}
+    <div>
+        <h3>Blogs CRUD API</h3>
+        <table>
+            <thead>
+                <th>URL</th>
+                <th>Method</th>
+                <th>Parameter</th>
+                <th>Action</th>
+                <th>Response</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>http://localhost/api/blog</td>
+                    <td>GET</td>
+                    <td> --- </td>
+                    <td>list all Blogs</td>
+                    <td>{data:[...{}]}</td>
+                </tr>
+                <tr>
+                    <td>http://localhost/api/blogs/create</td>
+                    <td>GET</td>
+                    <td> --- </td>
+                    <td>show table details</td>
+                    <td>{data:{}}</td>
+                </tr>
+                <tr>
+                    <td>http://localhost/api/blogs/{id}/edit</td>
+                    <td>GET</td>
+                    <td>{id} blogs id</td>
+                    <td>get blog record</td>
+                    <td>{data:{}}</td>
+                </tr>
+                <tr>
+                    <td>http://localhost/api/blog/{id}</td>
+                    <td>GET</td>
+                    <td>{id} blog id</td>
+                    <td>show specific blog by its ID</td>
+                    <td>{status:false , msg:string , data=[empty]} | {status:true , data:{}}</td>
+                </tr>
+                <tr>
+                    <td>http://localhost/api/blog</td>
+                    <td>POST</td>
+                    <td> --- </td>
+                    <td>store new post on blog</td>
+                    <td>{status:false , msg:string , errors:[]} | {status:true , msg:string , record:{}}</td>
+                </tr>
+                <tr>
+                    <td>http://localhost/api/blog/{id}/update</td>
+                    <td>POST</td>
+                    <td>{id} blog id</td>
+                    <td>update blog by its ID</td>
+                    <td>{status:false , msg:string , errors:[]} | {status:true , msg:string }</td>
+                </tr>
+                <tr>
+                    <td>http://localhost/api/blog/{id}</td>
+                    <td>DELETE</td>
+                    <td>{id} blog id</td>
+                    <td>delete blog by its ID</td>
+                    <td>{status:false , msg:string} | {status:true , msg:string}</td>
+                </tr>
+            </tbody>
+        </table>
+        <br><br>
+    </div>
+    {{-- / Blogs API --}}
+
+
 
     {{-- register API --}}
     <div>
