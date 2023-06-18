@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 //root 
-Route::get('/' , fn ()=>redirect(route('home')))->name('root'); 
+Route::get('/' , fn ()=>redirect(route('auth.index')))->name('root'); 
 
 //auth web 
 Route::get ('login', [AuthController::class , 'index'])->name('auth.index')->middleware('guest'); 
