@@ -29,6 +29,7 @@
                     <th>Email</th>
                     <th>Type</th>
                     <th>Phone</th>
+                    <th>address</th>
                     <th>Image</th>
                     <th>Edit</th>
                     <th>Delete</th>
@@ -42,6 +43,7 @@
                                 <td>{{ $user->email }}</td>
                                 <td>{{ $user->type }}</td>
                                 <td>{{ $user->phone }}</td>
+                                <td><pre>{{ $user->address }}<pre></td>
                                 @if ($user->image)
                                     <td><a href="{{ asset($user->image) }}">Image</a></td>
                                 @else

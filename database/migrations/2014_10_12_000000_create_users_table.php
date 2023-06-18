@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('password')->nullable(false);
             $table->enum('type',['user','suppler','doctor','admin'])->nullable(false);
             $table->string('phone')->nullable(true);
+            $table->text('address')->nullable(true);
             $table->text('image')->nullable(true);
 
             $table->rememberToken();

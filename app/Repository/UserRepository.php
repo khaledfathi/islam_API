@@ -20,6 +20,7 @@ class UserRepository implements UserRepositoryContract{
             'password'=>'required', 
             'type' => "required , accept these value ['admin' , 'user' , 'suppler' , 'doctor']",
             'phone'=> 'optional , number only ',
+            'address'=>'optional',
             'image'=> 'optional , accepted type [jpg,jpge,bmp,png,tiff,webp,heif] , max size: 10000 KB ',
         ]; 
     }

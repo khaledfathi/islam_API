@@ -32,6 +32,7 @@ class UserController extends Controller
             'name'=>$request->name, 
             'email'=>$request->email, 
             'phone'=>$request->phone, 
+            'address'=>$request->address, 
             'password'=>$request->password,
             'type'=>$request->type,
         ]; 
@@ -70,6 +71,7 @@ class UserController extends Controller
             'name'=>$request->name, 
             'email'=>$request->email, 
             'phone'=>$request->phone, 
+            'address'=>$request->address, 
             'type'=>$request->type,
         ]; 
         if ($request->password){

@@ -35,6 +35,10 @@
                     <input type="text" name="phone" id="">
                 </div>
                 <div>
+                    <label for="">Address</label>
+                    <textarea style="resize:none;vertical-align:middle" name="address" id="" cols="30" rows="5"></textarea>
+                </div>
+                <div>
                     <label for="">Password<span style="color:red">*</span></label>
                     <input type="password" name="password" id="" required>
                 </div>
