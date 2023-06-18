@@ -23,7 +23,7 @@ class StoreBlogRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'user_id'=>'exists:users,id',
+            'user_id'=>'nullable|exists:users,id',
             'time' => 'required|date_format:Y-m-d\ H:i', 
             'title'=>'required|', 
         ];

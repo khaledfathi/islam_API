@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Blog;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Web\Blog\StoreBlogRequest;
+use App\Http\Requests\Web\Blog\UpdateBlogRequest;
 use App\Repository\Contract\BlogRepositoryContract;
 use App\Repository\Contract\UserRepositoryContract;
 use Illuminate\Http\Request;
@@ -43,7 +45,7 @@ class BlogController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreBlogRequest $request)
     {
         $this->blogProvider->store((array)$request->except('_token')); 
         return redirect(route('blog.index')); 
@@ -78,7 +80,7 @@ class BlogController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request)
+    public function update(UpdateBlogRequest $request)
     {
         $this->blogProvider->update((array)$request->except(['_token', 'id']) , $request->id);
         return redirect(route('blog.index'));  

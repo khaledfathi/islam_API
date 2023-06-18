@@ -70,7 +70,7 @@ class BlogRepository implements BlogRepositoryContract {
     {
         return [
             'user_id' => 'nullable ', 
-            'time' => 'required | stander datetime format ISO8601 | same as this ( yyyy-mm-dd xx:xx )', 
+            'time' => 'required | stander datetime format ISO8601 | same as this ( yyyy-mm-ddTxx:xx )', 
             'title'=>'required ',
             'abstract'=>'nullable ',
             'article'=>'nullable '

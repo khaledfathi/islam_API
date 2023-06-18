@@ -23,10 +23,9 @@ class UpdateBlogRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'user_id'=>'exists:users,id',
+            'user_id'=>'nullable|exists:users,id',
             'time' => 'sometimes|required|date_format:Y-m-d\ H:i', 
             'title'=>'sometimes|required', 
-
         ];
     }
     protected function failedValidation(\Illuminate\Contracts\Validation\Validator $validator)

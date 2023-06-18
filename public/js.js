@@ -6,15 +6,19 @@ const send = document.querySelector('#send');
 let dateTime = new Date(); 
 console.log(dateTime.toISOString()); 
 
+const offline= 'http://localhost/'; 
+const online = 'http://ah.khaledfathi.com/'; 
+
+
 let data ={
-    user_id:1, 
+    user_id:2, 
     'time':'2050-02-02 20:19',
-    'title':'1111111',
-    'abstract':'11111',
-    'article': '11111',
+    'title':'lkds',
+    'abstract':'kfsjdkf',
+    'article': 'kgjf',
 }
 function eventtAction (){
-    ajax('http://localhost/api/blog/15/update' , 'post' , data , (fileUpload.value)?fileUpload:null).then((res)=>{
+    ajax( (online+'api/blog/3/update') , 'post' , data , (fileUpload.value)?fileUpload:null).then((res)=>{
         console.log(res); 
     }); 
 

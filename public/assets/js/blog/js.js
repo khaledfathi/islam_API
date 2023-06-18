@@ -9,7 +9,7 @@ function getCurrentTime(){
     let year = timeNow.getFullYear();
     let hours = timeNow.getHours();
     let minutes = timeNow.getMinutes();
-    return `${year}-${month}-${date} ${hours}:${minutes}`; 
+    return `${year}-${month}-${date}T${hours}:${minutes}`; 
 }
 
 // console.log('ok'); 
