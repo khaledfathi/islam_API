@@ -15,7 +15,7 @@ class DatabaseSeeder extends Seeder
        \App\Models\User::create([
         'name'=>'islam', 
         'email'=>'islam@mail.com',
-        'password'=>'admin',
+        'password'=>'01125251090',
         'phone'=>'01125251090',
         'type'=>'admin'
        ]);
