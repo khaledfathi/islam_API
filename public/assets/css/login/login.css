@@ -1,0 +1,17 @@
+.container{
+    border: 1px solid black;
+    width: fit-content;
+    padding: 20px;
+    margin: 50px auto;
+}
+.container label{
+    display: inline-block;
+    width: 100px;
+    margin: 10px 0px;
+}
+.container [type='submit']{
+    margin: 20px 10px; 
+    width: 100px;
+    height: 40px;
+    font-size: 13pt;
+}
