@@ -1,6 +1,6 @@
 @extends('layout.main')
 @section('title', 'Users | Create')
-@section('active-user' , 'active-button')
+@section('active-service' , 'active-button')
 @section('links')
     <link rel="stylesheet" href="{{ asset('assets/css/service/create.css') }}">
 @endsection
@@ -10,7 +10,7 @@
 @section('content')
     <div>
         <div>
-            <h3>Create New User</h3>
+            <h3>Create New Service</h3>
         </div>
         <div class="errors">
             @if ($errors->any())
