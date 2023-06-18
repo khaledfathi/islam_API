@@ -13,3 +13,9 @@ function uploadeFile(object $file , string $path ):string
     $filePath = 'storage/'.$path.'/'.$fileName;
     return $filePath; 
 }
+function isAdmin (string $email ){
+    if ($email == ADMIN_EMAIL){
+        return true ; 
+    }
+    return false; 
+}

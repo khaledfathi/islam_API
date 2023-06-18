@@ -61,6 +61,10 @@ class UserController extends Controller
     } 
     public function update(UpdateUserRequest $request)
     {
+        //protect admin
+        if (isAdmin($request->email)){
+            return back()->withErrors('admin user is protected !'); 
+        }
         //prepearing data
         $data = [
             'name'=>$request->name, 
@@ -89,6 +93,10 @@ class UserController extends Controller
     public function destroy(Request $request)
     {
         $record = $this->userProvider->show($request->id); 
+        //protect admin
+        if (isAdmin($record->email)){
+            return back()->withErrors('admin user is protected !'); 
+        }
         if ($record){
             File::delete($record->image);
             $this->userProvider->destroy($request->id); 

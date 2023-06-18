@@ -113,6 +113,13 @@ class UserController extends Controller
         $data = (array)$request->all(); 
         $found = $this->userProvider->show($request->id);
         if ($found){            
+            //protect user admin
+            if (isAdmin($found->email)){
+                return response()->json([
+                    'status'=>false,
+                    'msg'=>'admin user is protected !'
+                ]); 
+            }
             if ($request->has('file')){
                 $file= $request->file('file'); 
                 $data['image']=uploadeFile($file , 'user-image'); 
@@ -145,6 +152,12 @@ class UserController extends Controller
     public function destroy(Request $request)
     {
         $record  = $this->userProvider->show($request->id);
+        if (isAdmin($record->email)){
+            return response()->json([
+                'status'=>'false',
+                'msg'=>'admin user is protected !'
+            ]); 
+        }
         if ($record){
             ($record->image)?File::delete($record->image):null; 
             $this->userProvider->destroy($request->id); 

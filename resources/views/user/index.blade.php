@@ -17,6 +17,11 @@
         </div>
         {{-- user data --}}
         <div>
+            <div>
+                @if($errors->any())
+                    <h3 style="color:red">ERROR : {{$errors->first()}}</h3>
+                @endif
+            </div>
             <table>
                 <thead>
                     <th>ID</th>
