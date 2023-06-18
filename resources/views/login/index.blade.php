@@ -16,7 +16,7 @@
         </div>
         <form action="{{route('auth.login')}}">
             <div>
-                <label for="">User Name</label>
+                <label for="">Email</label>
                 <input type="email" name="email" >
             </div>
             <div>
