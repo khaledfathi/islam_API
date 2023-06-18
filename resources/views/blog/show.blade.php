@@ -18,7 +18,7 @@
             <div>
                 <h1>Title : {{$record->title}}  </h1>
                 <h2>Author : ID:{{$record->user_id}} | {{$record->user_name}} | {{$record->user_type}}</h2>
-                <h2>Time : {{$record->time}}</h2>
+                <h2>Time : {{substr($record->time , 0 , -3)}}</h2>
             </div>
             <hr>
             <div>

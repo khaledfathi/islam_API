@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\API\Auth\AuthController;
+use App\Http\Controllers\API\Blog\BlogController;
 use App\Http\Controllers\API\Product\ProductController;
 use App\Http\Controllers\API\RegisterController;
 use App\Http\Controllers\API\User\UserController;
@@ -38,6 +39,19 @@ Route::group(['prefix'=>'product'], function (){
     Route::delete('{id}' , [ProductController::class , 'destroy']); 
     Route::post('{id}/update' , [ProductController::class , 'update']);//it should use PUT  but php PUT method doesn't send file 
 });
+
+//blogs 
+Route::group(['prefix'=>'blog'], function (){
+    Route::get('' , [BlogController::class , 'index']); 
+    Route::post('' , [BlogController::class , 'store']); 
+    Route::get('create' , [BlogController::class , 'create']); 
+    Route::get('{id}/edit' , [BlogController::class , 'edit']); 
+    Route::get('{id}' , [BlogController::class , 'show']); 
+    Route::delete('{id}' , [BlogController::class , 'destroy']); 
+    Route::post('{id}/update' , [BlogController::class , 'update']);//it should use PUT  but php PUT method doesn't send file 
+});
+
+
 
 //register
 route::group(['prefix'=>'register'] , function (){

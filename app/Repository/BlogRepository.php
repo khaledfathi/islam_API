@@ -4,9 +4,9 @@ use App\Models\BlogModel;
 use App\Repository\Contract\BlogRepositoryContract; 
 
 class BlogRepository implements BlogRepositoryContract {
-    public function index (bool $leftJoinUsers=false):object 
+    public function index (bool $leftJoinUsers=false , $api=false):object 
     {
-        if ($leftJoinUsers){
+        if ($leftJoinUsers && !$api){
             return BlogModel::leftJoin('users' , 'users.id' , '=' , 'blogs.user_id')->select(
                 'users.id as user_id',
                 'users.name as user_name',
@@ -17,6 +17,17 @@ class BlogRepository implements BlogRepositoryContract {
                 'blogs.abstract',
                 'blogs.article',
             )->get(); 
+        }else if ($api){
+             return BlogModel::leftJoin('users' , 'users.id' , '=' , 'blogs.user_id')->select(
+                'users.id as user_id',
+                'users.name as autor',
+                'blogs.id', 
+                'blogs.title',
+                'blogs.time',
+                'blogs.abstract',
+                'blogs.article',
+            )->get(); 
+ 
         }
         return BlogModel::get(); 
     }
@@ -24,9 +35,9 @@ class BlogRepository implements BlogRepositoryContract {
     {
         return BlogModel::create($data); 
     }
-    public function show(mixed $id , $leftJonUsers=false):object|null 
+    public function show(mixed $id , $leftJonUsers=false , $api=false):object|null 
     {
-        if ($leftJonUsers){
+        if ($leftJonUsers && !$api){
             return BlogModel::leftJoin('users' , 'users.id' , '=' , 'blogs.user_id')->select(
                 'users.id as user_id',
                 'users.name as user_name',
@@ -37,6 +48,17 @@ class BlogRepository implements BlogRepositoryContract {
                 'blogs.abstract',
                 'blogs.article',
             )->where('blogs.id' , $id)->first(); 
+        }elseif($api){
+            return BlogModel::leftJoin('users' , 'users.id' , '=' , 'blogs.user_id')->select(
+                'users.id as user_id',
+                'users.name as author',
+                'blogs.id as id', 
+                'blogs.title',
+                'blogs.time',
+                'blogs.abstract',
+                'blogs.article',
+            )->where('blogs.id' , $id)->first(); 
+
         }
         return BlogModel::where ('id' , $id)->first(); 
     }
@@ -46,6 +68,13 @@ class BlogRepository implements BlogRepositoryContract {
     }
     public function create():array
     {
+        return [
+            'user_id' => 'nullable ', 
+            'time' => 'required | stander datetime format ISO8601 | same as this ( yyyy-mm-dd xx:xx )', 
+            'title'=>'required ',
+            'abstract'=>'nullable ',
+            'article'=>'nullable '
+        ]; 
 
     }
     public function update(array $data , int $id):bool

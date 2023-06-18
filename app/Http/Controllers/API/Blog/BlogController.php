@@ -3,16 +3,30 @@
 namespace App\Http\Controllers\API\Blog;
 
 use App\Http\Controllers\Controller;
+use App\Repository\Contract\BlogRepositoryContract;
+use App\Repository\Contract\UserRepositoryContract;
 use Illuminate\Http\Request;
 
 class BlogController extends Controller
 {
+    public BlogRepositoryContract $blogProvider; 
+    public UserRepositoryContract $userProvider;
+    public function __construct(
+        BlogRepositoryContract $blogProvider , 
+        UserRepositoryContract $userProvider
+    ){
+        $this->blogProvider = $blogProvider; 
+        $this->userProvider = $userProvider; 
+    }
+
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+         return response()->json([
+            'data'=>$this->blogProvider->index(api:true),
+        ]); 
     }
 
     /**
@@ -20,7 +34,9 @@ class BlogController extends Controller
      */
     public function create()
     {
-        //
+        return response()->json([
+            'data'=>$this->blogProvider->create() 
+        ]); 
     }
 
     /**
@@ -28,38 +44,84 @@ class BlogController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //preparing data to store 
+        $data = [
+            'user_id'=>$request->user_id, 
+            'time'=>$request->time,
+            'title'=>$request->title,
+            'abstract'=>$request->abstract,
+            'article'=>$request->article,
+        ]; 
+        $record = $this->blogProvider->store($data); 
+        return response()->json([
+            'status'=>true,
+            'msg'=>"Blog has been stored .",
+            'record'=>$record
+        ]); 
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Request $request)
     {
-        //
+        $found = $this->blogProvider->show($request->id , api:true); 
+        if ($found){
+            return response()->json([
+                'status'=>true,
+                'data'=>$found,
+            ]); 
+        }
+        return response()->json([
+            'status'=>false,
+            'msg'=>'User is not exist !',
+            'data'=>[],
+        ]); 
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Request $request)
     {
-        //
+        $found = $this->blogProvider->show($request->id , api:true); 
+        if ($found){
+            return response()->json([
+                'status'=>true,
+                'data'=>$found,
+            ]); 
+        }
+        return response()->json([
+            'status'=>false,
+            'msg'=>'User is not exist !',
+            'data'=>[],
+        ]); 
     }
-
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request)
     {
-        //
+        $this->blogProvider->update((array)$request->all() , $request->id); 
+        return response()->json([
+            'status'=>true,
+            'msg'=>"Blog has been Updated .",
+        ]); 
     }
-
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Request $request)
     {
-        //
+       if ($this->blogProvider->destroy($request->id)){
+            return response()->json([
+                'status'=>true,
+                'msg'=>'Post has been deleted successfuly .'
+            ]); 
+       }
+            return response()->json([
+                'status'=>false,
+                'msg'=>'Post is not exist !',
+            ]); 
     }
 }

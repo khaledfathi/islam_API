@@ -7,19 +7,15 @@ let dateTime = new Date();
 console.log(dateTime.toISOString()); 
 
 let data ={
-    'name':'ds',
-    'email':'dsad22ds@fdksk',
-    'phone':'ds',
-    'address': 'dsadasdsa',
-    'type':'user',
-    'password':'password',
+    'time':'2050-02-02 20:19',
+    'title':'1111111',
+    'abstract':'11111',
+    'article': '11111',
 }
 function eventtAction (){
-    // ajax('http://localhost/api/user/2/update' , 'post' , data , (fileUpload.value)?fileUpload:null).then((res)=>{
-    //     console.log(res); 
-    // }); 
-
-
+    ajax('http://localhost/api/blog/16/update' , 'post' , data , (fileUpload.value)?fileUpload:null).then((res)=>{
+        console.log(res); 
+    }); 
 
 }
 

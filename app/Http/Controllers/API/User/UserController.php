@@ -168,8 +168,8 @@ class UserController extends Controller
             ]); 
         }
         return response()->json([
-                'status'=>false,
-                'msg'=>'User is not exist !',
-            ]); 
+            'status'=>false,
+            'msg'=>'User is not exist !',
+        ]); 
     }    
 }
