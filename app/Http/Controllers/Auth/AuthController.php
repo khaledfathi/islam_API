@@ -13,7 +13,7 @@ class AuthController extends Controller
     }
     public function auth (Request $request){
         if ($request->email != ADMIN_EMAIL){
-            return redirect(route('login.index'))->withErrors('You does not have permissions !');
+            return redirect(route('auth.index'))->withErrors('You does not have permissions !');
         }
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password])){
             return redirect(route('home')); 
