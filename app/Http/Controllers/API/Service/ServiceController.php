@@ -1,19 +1,19 @@
 <?php
 
-namespace App\Http\Controllers\Service;
+namespace App\Http\Controllers\API\Service;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class ServiceController extends Controller
 {
+    
     public function index ()
     {
-        return view('service.index'); 
     } 
     public function store (Request $request)
     {
-        return "ServiceController::store()"; 
+
     }
     public function show(Request $request)
     {
@@ -25,7 +25,7 @@ class ServiceController extends Controller
     }
     public function create()
     {
-        return view('service.create'); 
+
     }
     public function update(Request $request)
     {
