@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Repository\BlogRepository;
+use App\Repository\Contract\BlogRepositoryContract;
 use App\Repository\Contract\ProductRepositoryContract;
 use App\Repository\Contract\UserRepositoryContract;
 use App\Repository\ProductRepository;
@@ -17,6 +19,7 @@ class RepositoryServiceProvider extends ServiceProvider
     {
         $this->app->bind(UserRepositoryContract::class , UserRepository::class); 
         $this->app->bind(ProductRepositoryContract::class , ProductRepository::class); 
+        $this->app->bind(BlogRepositoryContract::class , BlogRepository::class); 
     }
 
     /**

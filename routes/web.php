@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Blog\BlogController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Home\HomeController;
 use App\Http\Controllers\LoginTester\LoginTesterController;
@@ -41,7 +42,7 @@ Route::middleware('auth')->group(function (){
     //users
     Route::group(['prefix'=>'user'] , function (){
         Route::get('' , [UserController::class , 'index'])->name('user.index'); 
-        Route::get('show/{id}' , [UserController::class , 'show'])->name('user.show'); 
+        // Route::get('show/{id}' , [UserController::class , 'show'])->name('user.show'); 
         Route::get('create' , [UserController::class , 'create'])->name('user.create'); 
         Route::post('store' , [UserController::class , 'store'])->name('user.store'); 
         Route::get('edit/{id}' , [UserController::class , 'edit'])->name('user.edit'); 
@@ -52,7 +53,7 @@ Route::middleware('auth')->group(function (){
     //products
     route::group(['prefix'=>'product'] , function (){
         Route::get('' , [ProductController::class , 'index'])->name('product.index'); 
-        Route::get('show/{id}' , [ProductController::class , 'show'])->name('product.show'); 
+        // Route::get('show/{id}' , [ProductController::class , 'show'])->name('product.show'); 
         Route::get('create' , [ProductController::class , 'create'])->name('product.create'); 
         Route::post('store' , [ProductController::class , 'store'])->name('product.store'); 
         Route::get('edit/{id}' , [ProductController::class , 'edit'])->name('product.edit'); 
@@ -60,14 +61,28 @@ Route::middleware('auth')->group(function (){
         Route::get('destroy/{id}' , [ProductController::class , 'destroy'])->name('product.destroy'); 
     }); 
 
+    //blogs
+    route::group(['prefix'=>'blog'] , function (){
+        Route::get('' , [BlogController::class , 'index'])->name('blog.index'); 
+        Route::get('show/{id}' , [BlogController::class , 'show'])->name('blog.show'); 
+        Route::get('create' , [BlogController::class , 'create'])->name('blog.create'); 
+        Route::post('store' , [BlogController::class , 'store'])->name('blog.store'); 
+        Route::get('edit/{id}' , [BlogController::class , 'edit'])->name('blog.edit'); 
+        Route::post('update' , [BlogController::class , 'update'])->name('blog.update'); 
+        Route::get('destroy/{id}' , [BlogController::class , 'destroy'])->name('blog.destroy'); 
+    }); 
+
+
     //Services
     route::group(['prefix'=>'service'] , function (){
         route::get('' , [ServiceController::class , 'index'])->name('service.index'); 
-        route::get('show/{id}' , [ServiceController::class , 'show'])->name('service.show'); 
+        // route::get('show/{id}' , [ServiceController::class , 'show'])->name('service.show'); 
         route::get('create' , [ServiceController::class , 'create'])->name('service.create'); 
         route::get('edit/{id}' , [ServiceController::class , 'edit'])->name('service.edit'); 
         route::get('destroy/{id}' , [ServiceController::class , 'destroy'])->name('service.destroy'); 
     }); 
+    
+    
 
     //Login tester
     route::group(['prefix'=>'login-tester'] , function (){

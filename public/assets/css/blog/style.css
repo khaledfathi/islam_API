@@ -1,0 +1,22 @@
+table , th , td{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th , td {
+    padding: 5px;
+    white-space: nowrap;
+}
+.user-button{
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    width: 150px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 13pt;
+    font-weight: bold;
+    margin: 15px;
+    background-color: gray;
+    color: white;
+    border: 2px solid black ;
+}
