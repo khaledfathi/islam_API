@@ -4,6 +4,7 @@ use App\Http\Controllers\API\Auth\AuthController;
 use App\Http\Controllers\API\Blog\BlogController;
 use App\Http\Controllers\API\Product\ProductController;
 use App\Http\Controllers\API\RegisterController;
+use App\Http\Controllers\API\Service\ServiceController;
 use App\Http\Controllers\API\User\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -51,6 +52,16 @@ Route::group(['prefix'=>'blog'], function (){
     Route::post('{id}/update' , [BlogController::class , 'update']);//it should use PUT  but php PUT method doesn't send file 
 });
 
+//services 
+Route::group(['prefix'=>'service'], function (){
+    Route::get('' , [ServiceController::class , 'index']); 
+    Route::post('' , [ServiceController::class , 'store']); 
+    Route::get('create' , [ServiceController::class , 'create']); 
+    Route::get('{id}/edit' , [ServiceController::class , 'edit']); 
+    Route::get('{id}' , [ServiceController::class , 'show']); 
+    Route::delete('{id}' , [ServiceController::class , 'destroy']); 
+    Route::post('{id}/update' , [ServiceController::class , 'update']);//it should use PUT  but php PUT method doesn't send file 
+});
 
 
 //register

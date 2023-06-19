@@ -42,7 +42,7 @@
                                 <td>{{ $product->product_name }}</td>
                                 <td>{{ $product->price }}</td>
                                 <td>{{ $product->category }}</td>
-                                <td>{{ $product->description }}</td>
+                                <td><pre>{{ $product->description }}<pre></td>
                                 @if ($product->product_image)
                                     <td><a href="{{ asset($product->product_image) }}">Image</a></td>
                                 @else

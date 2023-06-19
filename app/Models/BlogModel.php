@@ -15,5 +15,10 @@ class BlogModel extends Model
         'abstract', 
         'article', 
         'user_id'
-    ]; 
+    ];
+    protected $hidden = [
+        'created_at',
+        'updated_at',
+    ];
+
 }

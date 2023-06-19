@@ -27,8 +27,23 @@ class ServiceRepository implements ServiceRepositoryContract{
     {
         return ServiceModel::create($data); 
     }
-    public function show(mixed $id):object|null
+    public function show(mixed $id , bool $leftJoinUsers=false):object|null 
     {
+        if($leftJoinUsers){
+            return ServiceModel::leftJoin('users' , 'users.id' , '=' , 'services.user_id')->select(
+                'users.id as user_id', 
+                'users.name as user_name', 
+                'users.type as user_type',
+                'services.id',
+                'services.name',
+                'services.phone',
+                'services.address',
+                'services.working_hours',
+                'services.description',
+                'services.service_type',
+                'services.animal_type'
+            )->where('services.id' , $id)->first(); 
+        }
         return ServiceModel::where('id' , $id)->first(); 
     }
     public function edit(mixed $id):object|null

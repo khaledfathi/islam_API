@@ -16,6 +16,10 @@ class ProductModel extends Model
         'category', 
         'image',
         'user_id'
-    ]; 
-    public $timestamps = false;
+    ];
+    protected $hidden = [
+        'created_at',
+        'updated_at',
+    ];
+
 }

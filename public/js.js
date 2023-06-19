@@ -18,7 +18,7 @@ let data ={
 
 }
 function eventtAction (){
-    ajax( offline+'api/register' , 'post' , data , (fileUpload.value)?fileUpload:null).then((res)=>{
+    ajax( offline+'api/service/2' , 'delete' , data , (fileUpload.value)?fileUpload:null).then((res)=>{
         console.log(res); 
     }); 
 

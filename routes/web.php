@@ -5,6 +5,7 @@ use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Home\HomeController;
 use App\Http\Controllers\LoginTester\LoginTesterController;
 use App\Http\Controllers\Product\ProductController;
+use App\Http\Controllers\Schema\SchemaController;
 use App\Http\Controllers\Service\ServiceController;
 use App\Http\Controllers\User\UserController;
 use Illuminate\Support\Facades\Route;
@@ -84,13 +85,15 @@ Route::middleware('auth')->group(function (){
         route::get('destroy/{id}' , [ServiceController::class , 'destroy'])->name('service.destroy'); 
     }); 
     
-    
 
     //Login tester
     route::group(['prefix'=>'login-tester'] , function (){
         route::get('' , [LoginTesterController::class , 'index'])->name('loginTester.index'); 
         route::get('login' , [LoginTesterController::class , 'login'])->name('loginTester.login'); 
     }); 
+
+    //schema
+    Route::get('schema' , [SchemaController::class , 'index'])->name('schema.index'); 
 });
 
 // ######################

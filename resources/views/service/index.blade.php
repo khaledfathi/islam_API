@@ -47,9 +47,9 @@
                                 @endif
                                 <td>{{ $service->name }}</td>
                                 <td>{{ $service->phone }}</td>
-                                <td>{{ $service->address }}</td>
+                                <td><pre>{{ $service->address }}<pre></td>
                                 <td>{{ $service->working_hours }}</td>
-                                <td>{{ $service->description }}</td>
+                                <td><pre>{{ $service->description }}<pre></td>
                                 <td>{{ $service->service_type }}</td>
                                 <td>{{ $service->animal_type }}</td>
                                 <td><a href="{{route('service.edit' , $service->id)}}">Edit</a></td>
