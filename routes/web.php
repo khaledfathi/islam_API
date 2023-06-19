@@ -80,7 +80,7 @@ Route::middleware('auth')->group(function (){
         route::get('create' , [ServiceController::class , 'create'])->name('service.create'); 
         route::post('store' , [ServiceController::class , 'store'])->name('service.store'); 
         route::get('edit/{id}' , [ServiceController::class , 'edit'])->name('service.edit'); 
-        route::get('update' , [ServiceController::class , 'edit'])->name('service.update'); 
+        route::get('update' , [ServiceController::class , 'update'])->name('service.update'); 
         route::get('destroy/{id}' , [ServiceController::class , 'destroy'])->name('service.destroy'); 
     }); 
     

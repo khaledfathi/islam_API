@@ -24,8 +24,8 @@
             <table>
                 <thead>
                     <th>ID</th>
-                    <th>user_id</th>
-                    <th>Name</th>
+                    <th>User </th>
+                    <th>Service Name</th>
                     <th>Phone</th>
                     <th>address</th>
                     <th>working_hours</th>
@@ -36,25 +36,23 @@
                     <th>Delete</th>
                 </thead>
                 <tbody>
-                    {{-- @if ($users)
-                        @foreach ($users as $user)
+                    @if ($services)
+                        @foreach ($services as $service)
                             <tr>
-                                <td>{{ $user->id }}</td>
-                                <td>{{ $user->name }}</td>
-                                <td>{{ $user->email }}</td>
-                                <td>{{ $user->type }}</td>
-                                <td>{{ $user->phone }}</td>
-                                <td><pre>{{ $user->address }}<pre></td>
-                                @if ($user->image)
-                                    <td><a href="{{ asset($user->image) }}">Image</a></td>
-                                @else
-                                    <td>---</td>
-                                @endif
-                                <td><a href="{{route('user.edit' , $user->id)}}">Edit</a></td>
-                                <td><a href="{{route('user.destroy' , $user->id)}}">Delete</a></td>
+                                <td>{{ $service->id }}</td>
+                                <td>{{ $service->user_id }}</td>
+                                <td>{{ $service->name }}</td>
+                                <td>{{ $service->phone }}</td>
+                                <td>{{ $service->address }}</td>
+                                <td>{{ $service->working_hours }}</td>
+                                <td>{{ $service->descreption }}</td>
+                                <td>{{ $service->service_type }}</td>
+                                <td>{{ $service->animal_type }}</td>
+                                <td><a href="{{route('service.edit' , $service->id)}}">Edit</a></td>
+                                <td><a href="{{route('service.destroy' , $service->id)}}">Delete</a></td>
                             </tr>
                         @endforeach
-                    @endif --}}
+                    @endif
                 </tbody>
             </table>
         </div>

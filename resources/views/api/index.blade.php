@@ -18,7 +18,7 @@
         <h3>Users CRUD API</h3>
         <table>
             <thead>
-                <th>URL</th>
+                <th>URI</th>
                 <th>Method</th>
                 <th>Parameter</th>
                 <th>Action</th>
@@ -26,49 +26,49 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>http://localhost/api/user</td>
+                    <td>/api/user</td>
                     <td>GET</td>
                     <td> --- </td>
                     <td>list all users</td>
                     <td>{data:[...{}]}</td>
                 </tr>
                 <tr>
-                    <td>http://localhost/api/user/create</td>
+                    <td>/api/user/create</td>
                     <td>GET</td>
                     <td> --- </td>
                     <td>show table details</td>
                     <td>{data:{}}</td>
                 </tr>
                 <tr>
-                    <td>http://localhost/api/user/{id}/edit</td>
+                    <td>/api/user/{id}/edit</td>
                     <td>GET</td>
                     <td>{id} user id</td>
                     <td>get user record</td>
                     <td>{data:{}}</td>
                 </tr>
                 <tr>
-                    <td>http://localhost/api/user/{id}</td>
+                    <td>/api/user/{id}</td>
                     <td>GET</td>
                     <td>{id} user id</td>
                     <td>show specific user by its ID</td>
                     <td>{status:false , msg:string , data=[empty]} | {status:true , data:{}}</td>
                 </tr>
                 <tr>
-                    <td>http://localhost/api/user</td>
+                    <td>/api/user</td>
                     <td>POST</td>
                     <td> --- </td>
                     <td>store new user</td>
                     <td>{status:false , msg:string , errors:[]} | {status:true , msg:string , record:{}}</td>
                 </tr>
                 <tr>
-                    <td>http://localhost/api/user/{id}/update</td>
+                    <td>/api/user/{id}/update</td>
                     <td>POST</td>
                     <td>{id} user id</td>
                     <td>update user by its ID</td>
                     <td>{status:false , msg:string , errors:[]} | {status:true , msg:string }</td>
                 </tr>
                 <tr>
-                    <td>http://localhost/api/user/{id}</td>
+                    <td>/api/user/{id}</td>
                     <td>DELETE</td>
                     <td>{id} user id</td>
                     <td>delete user by its ID</td>
@@ -86,7 +86,7 @@
         <h3>Products CRUD API</h3>
         <table>
             <thead>
-                <th>URL</th>
+                <th>URI</th>
                 <th>Method</th>
                 <th>Parameter</th>
                 <th>Action</th>
@@ -94,49 +94,49 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>http://localhost/api/product</td>
+                    <td>/api/product</td>
                     <td>GET</td>
                     <td> --- </td>
                     <td>list all product</td>
                     <td>{data:[...{}]}</td>
                 </tr>
                 <tr>
-                    <td>http://localhost/api/product/create</td>
+                    <td>/api/product/create</td>
                     <td>GET</td>
                     <td> --- </td>
                     <td>show table details</td>
                     <td>{data:{}}</td>
                 </tr>
                 <tr>
-                    <td>http://localhost/api/product/{id}/edit</td>
+                    <td>/api/product/{id}/edit</td>
                     <td>GET</td>
                     <td>{id} product id</td>
                     <td>get product record</td>
                     <td>{data:{}}</td>
                 </tr>
                 <tr>
-                    <td>http://localhost/api/product/{id}</td>
+                    <td>/api/product/{id}</td>
                     <td>GET</td>
                     <td>{id} product id</td>
                     <td>show specific product by its ID</td>
                     <td>{status:false , msg:string , data=[empty]} | {status:true , data:{}}</td>
                 </tr>
                 <tr>
-                    <td>http://localhost/api/product</td>
+                    <td>/api/product</td>
                     <td>POST</td>
                     <td> --- </td>
                     <td>store new product</td>
                     <td>{status:false , msg:string , errors:[]} | {status:true , msg:string , record:{}}</td>
                 </tr>
                 <tr>
-                    <td>http://localhost/api/product/{id}/update</td>
+                    <td>/api/product/{id}/update</td>
                     <td>POST</td>
                     <td>{id} product id</td>
                     <td>update product by its ID</td>
                     <td>{status:false , msg:string , errors:[]} | {status:true , msg:string }</td>
                 </tr>
                 <tr>
-                    <td>http://localhost/api/product/{id}</td>
+                    <td>/api/product/{id}</td>
                     <td>DELETE</td>
                     <td>{id} product id</td>
                     <td>delete product by its ID</td>
@@ -153,7 +153,7 @@
         <h3>Blogs CRUD API</h3>
         <table>
             <thead>
-                <th>URL</th>
+                <th>URI</th>
                 <th>Method</th>
                 <th>Parameter</th>
                 <th>Action</th>
@@ -161,49 +161,49 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>http://localhost/api/blog</td>
+                    <td>/api/blog</td>
                     <td>GET</td>
                     <td> --- </td>
                     <td>list all Blogs</td>
                     <td>{data:[...{}]}</td>
                 </tr>
                 <tr>
-                    <td>http://localhost/api/blogs/create</td>
+                    <td>/api/blogs/create</td>
                     <td>GET</td>
                     <td> --- </td>
                     <td>show table details</td>
                     <td>{data:{}}</td>
                 </tr>
                 <tr>
-                    <td>http://localhost/api/blogs/{id}/edit</td>
+                    <td>/api/blogs/{id}/edit</td>
                     <td>GET</td>
                     <td>{id} blogs id</td>
                     <td>get blog record</td>
                     <td>{data:{}}</td>
                 </tr>
                 <tr>
-                    <td>http://localhost/api/blog/{id}</td>
+                    <td>/api/blog/{id}</td>
                     <td>GET</td>
                     <td>{id} blog id</td>
                     <td>show specific blog by its ID</td>
                     <td>{status:false , msg:string , data=[empty]} | {status:true , data:{}}</td>
                 </tr>
                 <tr>
-                    <td>http://localhost/api/blog</td>
+                    <td>/api/blog</td>
                     <td>POST</td>
                     <td> --- </td>
                     <td>store new post on blog</td>
                     <td>{status:false , msg:string , errors:[]} | {status:true , msg:string , record:{}}</td>
                 </tr>
                 <tr>
-                    <td>http://localhost/api/blog/{id}/update</td>
+                    <td>/api/blog/{id}/update</td>
                     <td>POST</td>
                     <td>{id} blog id</td>
                     <td>update blog by its ID</td>
                     <td>{status:false , msg:string , errors:[]} | {status:true , msg:string }</td>
                 </tr>
                 <tr>
-                    <td>http://localhost/api/blog/{id}</td>
+                    <td>/api/blog/{id}</td>
                     <td>DELETE</td>
                     <td>{id} blog id</td>
                     <td>delete blog by its ID</td>
@@ -222,7 +222,7 @@
         <h3>Register User API</h3>
         <table>
             <thead>
-                <th>URL</th>
+                <th>URI</th>
                 <th>Method</th>
                 <th>Parameter</th>
                 <th>Action</th>
@@ -231,14 +231,14 @@
             <tbody>
 
                 <tr>
-                    <td>http://localhost/api/register</td>
+                    <td>/api/register</td>
                     <td>POST</td>
                     <td> --- </td>
                     <td>Register a New User </td>
                     <td>{status:false , msg:string , errors:[]} | {status:true , msg:string }</td>
                 </tr>
                 <tr>
-                    <td>http://localhost/api/register/create</td>
+                    <td>/api/register/create</td>
                     <td>GET</td>
                     <td> --- </td>
                     <td>show table details</td>
@@ -255,7 +255,7 @@
         <h3> Auth Login API</h3>
         <table>
             <thead>
-                <th>URL</th>
+                <th>URI</th>
                 <th>Method</th>
                 <th>Parameter</th>
                 <th>Action</th>
@@ -263,7 +263,7 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>http://localhost/api/auth/login</td>
+                    <td>/api/auth/login</td>
                     <td>POST</td>
                     <td> --- </td>
                     <td>authenticate user to login</td>

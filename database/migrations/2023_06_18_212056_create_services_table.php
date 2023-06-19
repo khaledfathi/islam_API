@@ -18,7 +18,7 @@ return new class extends Migration
             $table->text('address')->nullable(false); 
             $table->string('working_hours')->nullable(true); 
             $table->text('description')->nullable(true); 
-            $table->enum('service_type',['clinic' , 'shelter'])->nullable(false); 
+            $table->enum('service_type',['clinics' , 'shelter'])->nullable(false); 
             $table->enum('animal_type',['cat','dog'])->nullable(true); 
             $table->timestamps();
             //FK
