@@ -153,19 +153,21 @@ class UserController extends Controller
     public function destroy(Request $request)
     {
         $record  = $this->userProvider->show($request->id);
-        if (isAdmin($record->email)){
-            return response()->json([
-                'status'=>'false',
-                'msg'=>'admin user is protected !'
-            ]); 
-        }
         if ($record){
-            ($record->image)?File::delete($record->image):null; 
-            $this->userProvider->destroy($request->id); 
-            return response()->json([
-                'status'=>true,
-                'msg'=>'User has been deleted successfuly .'
-            ]); 
+            if (isAdmin($record->email)){
+                return response()->json([
+                    'status'=>'false',
+                    'msg'=>'admin user is protected !'
+                ]); 
+            }
+            if ($record){
+                ($record->image)?File::delete($record->image):null; 
+                $this->userProvider->destroy($request->id); 
+                return response()->json([
+                    'status'=>true,
+                    'msg'=>'User has been deleted successfuly .'
+                ]); 
+            }
         }
         return response()->json([
             'status'=>false,

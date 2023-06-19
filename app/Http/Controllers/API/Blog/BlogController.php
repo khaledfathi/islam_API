@@ -76,7 +76,7 @@ class BlogController extends Controller
         }
         return response()->json([
             'status'=>false,
-            'msg'=>'User is not exist !',
+            'msg'=>'Blog is not exist !',
             'data'=>[],
         ]); 
     }
@@ -95,7 +95,7 @@ class BlogController extends Controller
         }
         return response()->json([
             'status'=>false,
-            'msg'=>'User is not exist !',
+            'msg'=>'Blog is not exist !',
             'data'=>[],
         ]); 
     }
@@ -104,11 +104,17 @@ class BlogController extends Controller
      */
     public function update(UpdateBlogRequest $request)
     {
-        $this->blogProvider->update((array)$request->all() , $request->id); 
-        return response()->json([
-            'status'=>true,
-            'msg'=>"Blog has been Updated .",
-        ]); 
+        if($this->blogProvider->update((array)$request->all() , $request->id)){
+            return response()->json([
+                'status'=>true,
+                'msg'=>"Blog has been Updated .",
+            ]); 
+        }; 
+    return response()->json([
+        'status'=>false,
+        'msg'=>'Post is not exist',
+    ]); 
+
     }
     /**
      * Remove the specified resource from storage.

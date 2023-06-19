@@ -215,6 +215,72 @@
     </div>
     {{-- / Blogs API --}}
 
+    {{-- service CRUD API --}}
+    <div>
+        <h3>Services CRUD API</h3>
+        <table>
+            <thead>
+                <th>URI</th>
+                <th>Method</th>
+                <th>Parameter</th>
+                <th>Action</th>
+                <th>Response</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>/api/service</td>
+                    <td>GET</td>
+                    <td> --- </td>
+                    <td>list all services</td>
+                    <td>{data:[...{}]}</td>
+                </tr>
+                <tr>
+                    <td>/api/service/create</td>
+                    <td>GET</td>
+                    <td> --- </td>
+                    <td>show table details</td>
+                    <td>{data:{}}</td>
+                </tr>
+                <tr>
+                    <td>/api/service/{id}/edit</td>
+                    <td>GET</td>
+                    <td>{id} service id</td>
+                    <td>get service record</td>
+                    <td>{data:{}}</td>
+                </tr>
+                <tr>
+                    <td>/api/service/{id}</td>
+                    <td>GET</td>
+                    <td>{id} service id</td>
+                    <td>show specific service by its ID</td>
+                    <td>{status:false , msg:string , data=[empty]} | {status:true , data:{}}</td>
+                </tr>
+                <tr>
+                    <td>/api/service</td>
+                    <td>POST</td>
+                    <td> --- </td>
+                    <td>store new post on service</td>
+                    <td>{status:false , msg:string , errors:[]} | {status:true , msg:string , record:{}}</td>
+                </tr>
+                <tr>
+                    <td>/api/service/{id}/update</td>
+                    <td>POST</td>
+                    <td>{id} service id</td>
+                    <td>update service by its ID</td>
+                    <td>{status:false , msg:string , errors:[]} | {status:true , msg:string }</td>
+                </tr>
+                <tr>
+                    <td>/api/service/{id}</td>
+                    <td>DELETE</td>
+                    <td>{id} service id</td>
+                    <td>delete service by its ID</td>
+                    <td>{status:false , msg:string} | {status:true , msg:string}</td>
+                </tr>
+            </tbody>
+        </table>
+        <br><br>
+    </div>
+    {{-- / service API --}}
 
 
     {{-- register API --}}

@@ -35,8 +35,8 @@ class ProductRepository implements ProductRepositoryContract{
             'price' => 'required , integer only ',
             'description'=>'optional ', 
             'category' => "required , accept these value ['food' ,'toys','accessories','beds','grooming']",
-            'image'=> 'required , accepted type [jpg,jpge,bmp,png,tiff,webp,heif] , max size: 10000 KB ',
-            'user_id' => 'optional , file '
+            'file'=> 'required , accepted type [jpg,jpge,bmp,png,tiff,webp,heif] , max size: 10000 KB ',
+            'user_id' => 'nullable '
         ]; 
     }
 public function show(mixed $id):object | null

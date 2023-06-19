@@ -31,19 +31,40 @@ class ServiceController extends Controller
     }
     public function show(Request $request)
     {
+        $record = $this->serviceProvider->show($request->id , leftJoinUsers:true);
+        if ($record){
+            return response()->json([
+                'status'=>true, 
+                'data'=>$this->serviceProvider->show($request->id , leftJoinUsers:true),
+            ]); 
+        }
         return response()->json([
-            'data'=>$this->serviceProvider->show($request->id , leftJoinUsers:true),
+            'status'=>false, 
+            'msg'=>'Service is not exist !',
+            'data'=>[]
         ]); 
+
     }
     public function edit(Request $request)
     {
+        $record = $this->serviceProvider->show($request->id , leftJoinUsers:true);
+        if ($record){
+            return response()->json([
+                'status'=>true, 
+                'data'=>$this->serviceProvider->show($request->id , leftJoinUsers:true),
+            ]); 
+        }
         return response()->json([
-            'data'=>$this->serviceProvider->show($request->id , leftJoinUsers:true),
+            'status'=>false, 
+            'msg'=>'Service is not exist !',
+            'data'=>[]
         ]); 
     }
     public function create()
     {
-        return $this->serviceProvider->create(); 
+        return response()->json([
+            'data'=>$this->serviceProvider->create()
+        ]);
     }
     public function update(UpdateServiceRequest $request)
     {

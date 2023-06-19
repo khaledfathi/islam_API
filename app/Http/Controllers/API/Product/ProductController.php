@@ -129,13 +129,12 @@ class ProductController extends Controller
                     'status'=>true,
                     'msg'=>'Product has been updated .'
                 ]);
-            }else {
-                 return response()->json([
-                    'status'=>false,
-                    'msg'=>'Validation error', 
-                ]);
             }
         }
+            return response()->json([
+                'status'=>false,
+                'msg'=>'Product is not exist .'
+            ]);
     }
 
     /**
