@@ -23,6 +23,7 @@ class RegisterController extends Controller
             'name'=>$request->name, 
             'email'=>$request->email,
             'phone'=>$request->phone,
+            'address'=>$request->address,
             'password'=>Hash::make($request->password),
             'type' =>$request->type,
         ]; 
