@@ -348,9 +348,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "show",
+							"raw": "{{url}}/api/user/1",
 							"host": [
-								"show"
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"1"
 							]
 						}
 					},
@@ -3589,14 +3594,14 @@
 							}
 						},
 						"url": {
-							"raw": "{{url}}/api/service/3",
+							"raw": "{{url}}/api/service/",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"api",
 								"service",
-								"3"
+								""
 							]
 						}
 					},
