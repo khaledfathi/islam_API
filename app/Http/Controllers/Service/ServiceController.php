@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Service;
 use App\Enum\AnimalType;
 use App\Enum\ServiceType;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Web\Service\StoreServiceRequest;
+use App\Http\Requests\Web\Service\UpdateServiceRequest;
 use App\Repository\Contract\ServiceRepositoryContract;
 use App\Repository\Contract\UserRepositoryContract;
 use Illuminate\Http\Request;
@@ -22,12 +24,12 @@ class ServiceController extends Controller
     } 
     public function index ()
     {
-        $services = $this->serviceProvider->index(); 
+        $services = $this->serviceProvider->index(leftJoinUsers:true); 
         return view('service.index',[
             'services'=>$services
         ]); 
     } 
-    public function store (Request $request)
+    public function store (StoreServiceRequest $request)
     {
         $this->serviceProvider->store((array)$request->except('_token'));
         return redirect(route('service.index')); 
@@ -60,7 +62,7 @@ class ServiceController extends Controller
             'animalTypes'=>$animalTypes
         ]); 
     }
-    public function update(Request $request)
+    public function update(UpdateServiceRequest $request)
     {
         $this->serviceProvider->update($request->except('_token'), $request->id); 
         return redirect(route('service.index')); 

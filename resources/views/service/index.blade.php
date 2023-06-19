@@ -40,12 +40,12 @@
                         @foreach ($services as $service)
                             <tr>
                                 <td>{{ $service->id }}</td>
-                                <td>{{ $service->user_id }}</td>
+                                <td>ID:{{ $service->user_id }} | {{ $service->user_name }} | {{ $service->user_type }}</td>
                                 <td>{{ $service->name }}</td>
                                 <td>{{ $service->phone }}</td>
                                 <td>{{ $service->address }}</td>
                                 <td>{{ $service->working_hours }}</td>
-                                <td>{{ $service->descreption }}</td>
+                                <td>{{ $service->description }}</td>
                                 <td>{{ $service->service_type }}</td>
                                 <td>{{ $service->animal_type }}</td>
                                 <td><a href="{{route('service.edit' , $service->id)}}">Edit</a></td>

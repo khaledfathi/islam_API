@@ -3,7 +3,7 @@
 namespace App\Repository\Contract; 
 
 interface ServiceRepositoryContract {
-    public function index ():object; 
+    public function index (bool $leftJoinUsers=false):object; 
     public function store (array $data):object ; 
     public function show(mixed $id):object|null; 
     public function edit(mixed $id):object|null; 

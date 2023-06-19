@@ -4,8 +4,23 @@ use App\Models\ServiceModel;
 use App\Repository\Contract\ServiceRepositoryContract;
 
 class ServiceRepository implements ServiceRepositoryContract{
-    public function index ():object
+    public function index (bool $leftJoinUsers=false):object 
     {
+        if($leftJoinUsers){
+            return ServiceModel::leftJoin('users' , 'users.id' , '=' , 'services.user_id')->select(
+                'users.id as user_id', 
+                'users.name as user_name', 
+                'users.type as user_type',
+                'services.id',
+                'services.name',
+                'services.phone',
+                'services.address',
+                'services.working_hours',
+                'services.description',
+                'services.service_type',
+                'services.animal_type'
+            )->get(); 
+        }
         return ServiceModel::get(); 
     }
     public function store (array $data):object 
