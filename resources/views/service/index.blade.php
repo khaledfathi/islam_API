@@ -40,7 +40,11 @@
                         @foreach ($services as $service)
                             <tr>
                                 <td>{{ $service->id }}</td>
-                                <td>ID:{{ $service->user_id }} | {{ $service->user_name }} | {{ $service->user_type }}</td>
+                                @if ($service->user_id)
+                                    <td>ID:{{ $service->user_id }} | {{ $service->user_name }} | {{ $service->user_type }}</td>
+                                @else
+                                    <td>NULL</td>
+                                @endif
                                 <td>{{ $service->name }}</td>
                                 <td>{{ $service->phone }}</td>
                                 <td>{{ $service->address }}</td>
