@@ -338,7 +338,9 @@
             </tbody>
         </table>
     </div>
+    <br><br>
     {{-- / auth API --}}
+    <h3><a href="{{route('download.postman')}}">Download Postman API exampls</a></h3>
 
     <br><br><br><br><br><br>
 @endsection

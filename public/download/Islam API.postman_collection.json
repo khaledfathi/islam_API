@@ -1,0 +1,4105 @@
+{
+	"info": {
+		"_postman_id": "c0341af4-9e13-4252-aef8-9dcb61256d0b",
+		"name": "Islam API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "index",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/user",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"user"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/user",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"user"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 16:38:49 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 16:38:49 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"islam\",\n            \"email\": \"islam@mail.com\",\n            \"type\": \"admin\",\n            \"phone\": \"01125251090\",\n            \"address\": null,\n            \"image\": null\n        },\n        {\n            \"id\": 4,\n            \"name\": \"Calista Howell\",\n            \"email\": \"annabell20@example.org\",\n            \"type\": \"admin\",\n            \"phone\": \"1-954-635-3809\",\n            \"address\": null,\n            \"image\": null\n        },\n        {\n            \"id\": 5,\n            \"name\": \"Benton Pollich\",\n            \"email\": \"pfunk@example.org\",\n            \"type\": \"suppler\",\n            \"phone\": \"+18722436831\",\n            \"address\": null,\n            \"image\": null\n        },\n        {\n            \"id\": 6,\n            \"name\": \"Prof. Thaddeus Graham DDS\",\n            \"email\": \"rhettinger@example.org\",\n            \"type\": \"admin\",\n            \"phone\": \"+1 (717) 484-5561\",\n            \"address\": null,\n            \"image\": null\n        },\n        {\n            \"id\": 7,\n            \"name\": \"Grayce Kihn\",\n            \"email\": \"ortiz.arlene@example.com\",\n            \"type\": \"user\",\n            \"phone\": \"+1-954-766-3033\",\n            \"address\": null,\n            \"image\": null\n        },\n        {\n            \"id\": 8,\n            \"name\": \"Beverly Altenwerth\",\n            \"email\": \"pouros.zaria@example.net\",\n            \"type\": \"admin\",\n            \"phone\": \"(920) 819-2773\",\n            \"address\": null,\n            \"image\": null\n        },\n        {\n            \"id\": 9,\n            \"name\": \"Dario Mann\",\n            \"email\": \"alanna.bosco@example.org\",\n            \"type\": \"user\",\n            \"phone\": \"(283) 630-8145\",\n            \"address\": null,\n            \"image\": null\n        },\n        {\n            \"id\": 10,\n            \"name\": \"Aida Legros Jr.\",\n            \"email\": \"laura.littel@example.com\",\n            \"type\": \"suppler\",\n            \"phone\": \"+1.757.599.1020\",\n            \"address\": null,\n            \"image\": null\n        },\n        {\n            \"id\": 11,\n            \"name\": \"Damion Bayer\",\n            \"email\": \"mschneider@example.org\",\n            \"type\": \"user\",\n            \"phone\": \"717-806-0353\",\n            \"address\": null,\n            \"image\": null\n        },\n        {\n            \"id\": 12,\n            \"name\": \"khjkljhlkj\",\n            \"email\": \"54353@kfdsj\",\n            \"type\": \"admin\",\n            \"phone\": null,\n            \"address\": null,\n            \"image\": \"storage/user-image/768_1687184289.jpg\"\n        },\n        {\n            \"id\": 13,\n            \"name\": \"khjkljhlkj\",\n            \"email\": \"54353@kfdsj444\",\n            \"type\": \"admin\",\n            \"phone\": null,\n            \"address\": null,\n            \"image\": \"storage/user-image/386_1687184302.jpg\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/user/create",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"create"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/user/create",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"user",
+										"create"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 16:43:56 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 16:43:56 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"name\": \"required \",\n        \"email\": \"required , unique , email only\",\n        \"password\": \"required\",\n        \"type\": \"required , accept these value ['admin' , 'user' , 'suppler' , 'doctor']\",\n        \"phone\": \"optional , number only \",\n        \"address\": \"optional\",\n        \"image\": \"optional , accepted type [jpg,jpge,bmp,png,tiff,webp,heif] , max size: 10000 KB \"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "edit",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/user/1/edit",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"1",
+								"edit"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "status_true",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/user/1/edit/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"user",
+										"1",
+										"edit",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 16:40:48 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 16:40:48 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "56"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"islam\",\n        \"email\": \"islam@mail.com\",\n        \"type\": \"admin\",\n        \"phone\": \"01125251090\",\n        \"address\": null,\n        \"image\": null\n    }\n}"
+						},
+						{
+							"name": "status_false",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/user/3/edit/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"user",
+										"3",
+										"edit",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 16:40:25 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 16:40:25 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": false,\n    \"msg\": \"User is not exist !\",\n    \"data\": []\n}"
+						}
+					]
+				},
+				{
+					"name": "show",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "show",
+							"host": [
+								"show"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "true",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/user/1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"user",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 16:42:01 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 16:42:01 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"islam\",\n        \"email\": \"islam@mail.com\",\n        \"type\": \"admin\",\n        \"phone\": \"01125251090\",\n        \"address\": null,\n        \"image\": null\n    }\n}"
+						},
+						{
+							"name": "false",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/user/154",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"user",
+										"154"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 16:42:16 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 16:42:16 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": false,\n    \"msg\": \"User is not exist !\",\n    \"data\": []\n}"
+						}
+					]
+				},
+				{
+					"name": "store",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"name\": \"test\",\n        \"email\": \"email@mail.com\",\n        \"password\": \"123\",\n        \"type\": \"admin\",\n        \"phone\": \"010430302302\",\n        \"address\": \"cairo, egypt\"    \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/user",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"user"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "status_true",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n        \"name\": \"test\",\n        \"email\": \"email@mail.com\",\n        \"password\": \"123\",\n        \"type\": \"admin\",\n        \"phone\": \"010430302302\",\n        \"address\": \"cairo, egypt\"    \n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/user",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"user"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 16:46:22 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 16:46:22 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"msg\": \"User has been stored .\",\n    \"record\": {\n        \"name\": \"test\",\n        \"email\": \"email@mail.com\",\n        \"phone\": \"010430302302\",\n        \"address\": \"cairo, egypt\",\n        \"type\": \"admin\",\n        \"id\": 14\n    }\n}"
+						},
+						{
+							"name": "status_false",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n        \"name\": \"test\",\n        \"email\": \"email@mail.com\",\n        \"password\": \"123\",\n        \"type\": \"admin\",\n        \"phone\": \"010430302302\",\n        \"address\": \"cairo, egypt\"    \n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/user",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"user"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 16:46:46 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 16:46:46 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": false,\n    \"msg\": \"one or more fileds is invalid !\",\n    \"errors\": [\n        \"The email has already been taken.\"\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/user/4/update",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"4",
+								"update"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "status_true",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/user/4/update",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"user",
+										"4",
+										"update"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 16:49:58 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 16:49:58 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"msg\": \"User has been updated .\"\n}"
+						},
+						{
+							"name": "status_false",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/user/3/update",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"user",
+										"3",
+										"update"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 16:48:29 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 16:48:29 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": false,\n    \"msg\": \"user is not exist !\"\n}"
+						},
+						{
+							"name": "status_false_admin",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/user/1/update",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"user",
+										"1",
+										"update"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 16:49:21 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 16:49:21 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": false,\n    \"msg\": \"admin user is protected !\"\n}"
+						}
+					]
+				},
+				{
+					"name": "destroy",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/user/55",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"55"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "status_true",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/user/4",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"user",
+										"4"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 16:50:52 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 16:50:52 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"msg\": \"User has been deleted successfuly .\"\n}"
+						},
+						{
+							"name": "status_false_admin",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/user/1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"user",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 16:51:13 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 16:51:13 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"false\",\n    \"msg\": \"admin user is protected !\"\n}"
+						},
+						{
+							"name": "status_false",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/user/55",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"user",
+										"55"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 16:51:40 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 16:51:40 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": false,\n    \"msg\": \"User is not exist !\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "index",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/product",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"product"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/product",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"product"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 16:58:02 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 16:58:02 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Pet Bed\",\n            \"price\": 29.99,\n            \"description\": \"just item 1!\",\n            \"category\": \"food\",\n            \"image\": \"storage/product-image/01.jpg\",\n            \"user_id\": null\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Pet Food\",\n            \"price\": 39.99,\n            \"description\": \"just item 2!\",\n            \"category\": \"food\",\n            \"image\": \"storage/product-image/02.jpg\",\n            \"user_id\": null\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Pet Shampoo\",\n            \"price\": 12.99,\n            \"description\": \"just item 3!\",\n            \"category\": \"food\",\n            \"image\": \"storage/product-image/03.jpg\",\n            \"user_id\": null\n        },\n        {\n            \"id\": 4,\n            \"name\": \"Pet Collar\",\n            \"price\": 7.99,\n            \"description\": \"just item 4!\",\n            \"category\": \"food\",\n            \"image\": \"storage/product-image/04.jpg\",\n            \"user_id\": null\n        },\n        {\n            \"id\": 5,\n            \"name\": \"Pet Grooming Push\",\n            \"price\": 4.99,\n            \"description\": \"just item 5!\",\n            \"category\": \"food\",\n            \"image\": \"storage/product-image/05.jpg\",\n            \"user_id\": null\n        },\n        {\n            \"id\": 6,\n            \"name\": \"Pet Nail Clippers\",\n            \"price\": 9.99,\n            \"description\": \"just item 6!\",\n            \"category\": \"food\",\n            \"image\": \"storage/product-image/06.jpg\",\n            \"user_id\": null\n        },\n        {\n            \"id\": 7,\n            \"name\": \"Pet Toothbrush\",\n            \"price\": 3.99,\n            \"description\": \"just item 7!\",\n            \"category\": \"food\",\n            \"image\": \"storage/product-image/07.jpg\",\n            \"user_id\": null\n        },\n        {\n            \"id\": 8,\n            \"name\": \"Pet PetDental Treats\",\n            \"price\": 8.99,\n            \"description\": \"just item 8!\",\n            \"category\": \"food\",\n            \"image\": \"storage/product-image/08.jpg\",\n            \"user_id\": null\n        },\n        {\n            \"id\": 9,\n            \"name\": \"Pet Litter Box\",\n            \"price\": 29.99,\n            \"description\": \"just item 9!\",\n            \"category\": \"food\",\n            \"image\": \"storage/product-image/09.jpg\",\n            \"user_id\": null\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/product/create",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"product",
+								"create"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/product/create",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"product",
+										"create"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 17:16:42 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 17:16:42 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"name\": \"required \",\n        \"price\": \"required , integer only \",\n        \"description\": \"optional \",\n        \"category\": \"required , accept these value ['food' ,'toys','accessories','beds','grooming']\",\n        \"file\": \"required , accepted type [jpg,jpge,bmp,png,tiff,webp,heif] , max size: 10000 KB \",\n        \"user_id\": \"nullable \"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "edit",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/product/44/edit",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"product",
+								"44",
+								"edit"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "status_true",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/product/1/edit",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"product",
+										"1",
+										"edit"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 17:00:58 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 17:00:58 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"Pet Bed\",\n        \"price\": 29.99,\n        \"description\": \"just item 1!\",\n        \"category\": \"food\",\n        \"image\": \"storage/product-image/01.jpg\",\n        \"user_id\": null\n    }\n}"
+						},
+						{
+							"name": "status_false",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/product/44/edit",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"product",
+										"44",
+										"edit"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 17:01:39 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 17:01:39 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": false,\n    \"msg\": \"product is not exist !\",\n    \"data\": []\n}"
+						}
+					]
+				},
+				{
+					"name": "show",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/product/43",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"product",
+								"43"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "status_true",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/product/1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"product",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 17:01:57 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 17:01:57 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"Pet Bed\",\n        \"price\": 29.99,\n        \"description\": \"just item 1!\",\n        \"category\": \"food\",\n        \"image\": \"storage/product-image/01.jpg\",\n        \"user_id\": null\n    }\n}"
+						},
+						{
+							"name": "status_false",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/product/43",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"product",
+										"43"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 17:02:18 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 17:02:18 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": false,\n    \"msg\": \"product is not exist !\",\n    \"data\": []\n}"
+						}
+					]
+				},
+				{
+					"name": "store",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "test product",
+									"type": "default"
+								},
+								{
+									"key": "price",
+									"value": "223",
+									"type": "default"
+								},
+								{
+									"key": "description",
+									"value": "test description",
+									"type": "default"
+								},
+								{
+									"key": "category",
+									"value": "food",
+									"type": "default"
+								},
+								{
+									"key": "user_id",
+									"value": "1",
+									"type": "default"
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/home/khaled/Pictures/my_bg/black-background-hd-1920x1200-54024.jpg"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/product/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"product",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "status_false",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n        \"name\": \"test\",\n        \"email\": \"email@mail.com\",\n        \"password\": \"123\",\n        \"type\": \"admin\",\n        \"phone\": \"010430302302\",\n        \"address\": \"cairo, egypt\"    \n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/product",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"product"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 17:02:46 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 17:02:46 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": false,\n    \"msg\": \"one or more fileds is invalid !\",\n    \"errors\": [\n        \"The price field is required.\",\n        \"The category field is required.\",\n        \"The file field is required.\"\n    ]\n}"
+						},
+						{
+							"name": "status_true",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "test product",
+											"type": "default"
+										},
+										{
+											"key": "price",
+											"value": "223",
+											"type": "default"
+										},
+										{
+											"key": "description",
+											"value": "test description",
+											"type": "default"
+										},
+										{
+											"key": "category",
+											"value": "food",
+											"type": "default"
+										},
+										{
+											"key": "user_id",
+											"value": "1",
+											"type": "default"
+										},
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/home/khaled/Pictures/my_bg/black-background-hd-1920x1200-54024.jpg"
+										}
+									],
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/product/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"product",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 17:09:49 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 17:09:49 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "56"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"msg\": \"Product has been stored .\",\n    \"record\": {\n        \"name\": \"test product\",\n        \"price\": \"223\",\n        \"description\": \"test description\",\n        \"category\": \"food\",\n        \"user_id\": \"1\",\n        \"image\": \"storage/product-image/888_1687194589.jpg\",\n        \"id\": 10\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/product/143/update",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"product",
+								"143",
+								"update"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "status_true",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/product/1/update",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"product",
+										"1",
+										"update"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 17:10:47 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 17:10:47 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"msg\": \"Product has been updated .\"\n}"
+						},
+						{
+							"name": "status_false",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/product/143/update",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"product",
+										"143",
+										"update"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 17:13:32 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 17:13:32 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": false,\n    \"msg\": \"Product is not exist .\"\n}"
+						}
+					]
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/product/43",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"product",
+								"43"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "status_true",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/product/4",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"product",
+										"4"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 17:14:00 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 17:14:00 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"msg\": \"Product has been deleted successfuly.\"\n}"
+						},
+						{
+							"name": "status_false",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/product/43",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"product",
+										"43"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 17:14:20 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 17:14:20 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": false,\n    \"msg\": \"product is not exist !\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Blogs",
+			"item": [
+				{
+					"name": "index",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/blog",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"blog"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/blog",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"blog"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 17:23:37 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 17:23:37 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"user_id\": null,\n            \"autor\": null,\n            \"id\": 1,\n            \"title\": \"432432\",\n            \"time\": \"2023-05-19 16:30:00\",\n            \"abstract\": \"4324\",\n            \"article\": \"423432432\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/blog/create",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"blog",
+								"create"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/blog/create",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"blog",
+										"create"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 17:23:48 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 17:23:48 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"user_id\": \"nullable \",\n        \"time\": \"required | stander datetime format ISO8601 | same as this ( yyyy-mm-ddTxx:xx )\",\n        \"title\": \"required \",\n        \"abstract\": \"nullable \",\n        \"article\": \"nullable \"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "edit",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/blog/1/edit",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"blog",
+								"1",
+								"edit"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "status_false",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/blog/1/edit",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"blog",
+										"1",
+										"edit"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 17:24:53 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 17:24:53 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": false,\n    \"msg\": \"Blog is not exist !\",\n    \"data\": []\n}"
+						},
+						{
+							"name": "status_true",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/blog/1/edit",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"blog",
+										"1",
+										"edit"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 17:25:33 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 17:25:33 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"data\": {\n        \"user_id\": null,\n        \"author\": null,\n        \"id\": 1,\n        \"title\": \"432432\",\n        \"time\": \"2023-05-19 16:30:00\",\n        \"abstract\": \"4324\",\n        \"article\": \"423432432\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "show",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/blog/12",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"blog",
+								"12"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "status_true",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/blog/1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"blog",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 17:25:55 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 17:25:55 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"data\": {\n        \"user_id\": null,\n        \"author\": null,\n        \"id\": 1,\n        \"title\": \"432432\",\n        \"time\": \"2023-05-19 16:30:00\",\n        \"abstract\": \"4324\",\n        \"article\": \"423432432\"\n    }\n}"
+						},
+						{
+							"name": "status_false",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/blog/12",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"blog",
+										"12"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 17:26:47 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 17:26:47 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": false,\n    \"msg\": \"Blog is not exist !\",\n    \"data\": []\n}"
+						}
+					]
+				},
+				{
+					"name": "store",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\": \"1\",\n    \"time\": \"2023-01-02T20:32\",\n    \"title\": \"required \",\n    \"abstract\": \"nullable \",\n    \"article\": \"nullable \"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/blog",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"blog"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "status_false",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_id\": \"nullable \",\n    \"time\": \"required | stander datetime format ISO8601 | same as this ( yyyy-mm-ddTxx:xx )\",\n    \"title\": \"required \",\n    \"abstract\": \"nullable \",\n    \"article\": \"nullable \"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/blog",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"blog"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 17:27:50 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 17:27:50 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": false,\n    \"msg\": \"one or more fileds is invalid !\",\n    \"errors\": [\n        \"The selected user id is invalid.\",\n        \"The time field must match the format Y-m-d\\\\TH:i.\"\n    ]\n}"
+						},
+						{
+							"name": "status_true",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_id\": \"1\",\n    \"time\": \"2023-01-02T20:32\",\n    \"title\": \"required \",\n    \"abstract\": \"nullable \",\n    \"article\": \"nullable \"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/blog",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"blog"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 17:28:39 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 17:28:39 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"msg\": \"Blog has been stored .\",\n    \"record\": {\n        \"user_id\": \"1\",\n        \"time\": \"2023-01-02T20:32\",\n        \"title\": \"required\",\n        \"abstract\": \"nullable\",\n        \"article\": \"nullable\",\n        \"id\": 2\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/blog/1/update",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"blog",
+								"1",
+								"update"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "status_false",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/blog/143/update",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"blog",
+										"143",
+										"update"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 17:30:40 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 17:30:40 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": false,\n    \"msg\": \"Post is not exist\"\n}"
+						},
+						{
+							"name": "status_true",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/blog/1/update",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"blog",
+										"1",
+										"update"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 17:31:13 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 17:31:13 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"msg\": \"Blog has been Updated .\"\n}"
+						}
+					]
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/blog/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"blog",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "status_false",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/blog/4",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"blog",
+										"4"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 17:31:40 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 17:31:40 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": false,\n    \"msg\": \"Post is not exist !\"\n}"
+						},
+						{
+							"name": "status_false",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/blog/1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"blog",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 17:32:03 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 17:32:03 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"msg\": \"Post has been deleted successfuly .\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Services",
+			"item": [
+				{
+					"name": "index",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/service",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"service"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/service",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"service"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 17:34:47 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 17:34:47 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"user_id\": 1,\n            \"user_name\": \"islam\",\n            \"user_type\": \"admin\",\n            \"id\": 3,\n            \"name\": \"lk sdf  hfds\",\n            \"phone\": \"9473829847\",\n            \"address\": \"kgksdfjgal\",\n            \"working_hours\": \"0239fsdok\",\n            \"description\": \"fsdkljfasdkj\",\n            \"service_type\": \"clinics\",\n            \"animal_type\": \"cat\"\n        },\n        {\n            \"user_id\": 1,\n            \"user_name\": \"islam\",\n            \"user_type\": \"admin\",\n            \"id\": 4,\n            \"name\": \"service test\",\n            \"phone\": \"754385478\",\n            \"address\": \"address test\",\n            \"working_hours\": \"10:00-18:00 7days\",\n            \"description\": \"nothing\",\n            \"service_type\": \"clinics\",\n            \"animal_type\": \"cat\"\n        },\n        {\n            \"user_id\": 1,\n            \"user_name\": \"islam\",\n            \"user_type\": \"admin\",\n            \"id\": 5,\n            \"name\": \"service test\",\n            \"phone\": \"754385478\",\n            \"address\": \"address test\",\n            \"working_hours\": \"10:00-18:00 7days\",\n            \"description\": \"nothing\",\n            \"service_type\": \"clinics\",\n            \"animal_type\": \"cat\"\n        },\n        {\n            \"user_id\": 1,\n            \"user_name\": \"islam\",\n            \"user_type\": \"admin\",\n            \"id\": 6,\n            \"name\": \"service test\",\n            \"phone\": \"754385478\",\n            \"address\": \"address test\",\n            \"working_hours\": \"10:00-18:00 7days\",\n            \"description\": \"nothing\",\n            \"service_type\": \"clinics\",\n            \"animal_type\": \"cat\"\n        },\n        {\n            \"user_id\": 1,\n            \"user_name\": \"islam\",\n            \"user_type\": \"admin\",\n            \"id\": 7,\n            \"name\": \"service test\",\n            \"phone\": \"754385478\",\n            \"address\": \"address test\",\n            \"working_hours\": \"10:00-18:00 7days\",\n            \"description\": \"nothing\",\n            \"service_type\": \"clinics\",\n            \"animal_type\": \"cat\"\n        },\n        {\n            \"user_id\": 1,\n            \"user_name\": \"islam\",\n            \"user_type\": \"admin\",\n            \"id\": 8,\n            \"name\": \"service test\",\n            \"phone\": \"754385478\",\n            \"address\": \"address test\",\n            \"working_hours\": \"10:00-18:00 7days\",\n            \"description\": \"nothing\",\n            \"service_type\": \"clinics\",\n            \"animal_type\": \"cat\"\n        },\n        {\n            \"user_id\": 1,\n            \"user_name\": \"islam\",\n            \"user_type\": \"admin\",\n            \"id\": 9,\n            \"name\": \"service test\",\n            \"phone\": \"754385478\",\n            \"address\": \"address test\",\n            \"working_hours\": \"10:00-18:00 7days\",\n            \"description\": \"nothing\",\n            \"service_type\": \"clinics\",\n            \"animal_type\": \"cat\"\n        },\n        {\n            \"user_id\": 1,\n            \"user_name\": \"islam\",\n            \"user_type\": \"admin\",\n            \"id\": 10,\n            \"name\": \"service test\",\n            \"phone\": \"754385478\",\n            \"address\": \"address test\",\n            \"working_hours\": \"10:00-18:00 7days\",\n            \"description\": \"nothing\",\n            \"service_type\": \"clinics\",\n            \"animal_type\": \"cat\"\n        },\n        {\n            \"user_id\": 1,\n            \"user_name\": \"islam\",\n            \"user_type\": \"admin\",\n            \"id\": 11,\n            \"name\": \"service test\",\n            \"phone\": \"754385478\",\n            \"address\": \"address test\",\n            \"working_hours\": \"10:00-18:00 7days\",\n            \"description\": \"nothing\",\n            \"service_type\": \"clinics\",\n            \"animal_type\": \"cat\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/service/create",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"service",
+								"create"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/service/create",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"service",
+										"create"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 17:49:11 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 17:49:11 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"user_id\": \"nullable , required\",\n        \"name\": \"required \",\n        \"phone\": \"required\",\n        \"address\": \"required\",\n        \"working_hours\": \"required\",\n        \"description\": \"optional\",\n        \"service_type\": \"required , accept these values only [clinics , shelter]\",\n        \"animal_type\": \"nullable , accept these values only [cat , dog]\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "edit",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/service/34/edit",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"service",
+								"34",
+								"edit"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "status_true",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/service/3/edit",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"service",
+										"3",
+										"edit"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 17:38:13 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 17:38:13 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"data\": {\n        \"user_id\": 1,\n        \"user_name\": \"islam\",\n        \"user_type\": \"admin\",\n        \"id\": 3,\n        \"name\": \"lk sdf  hfds\",\n        \"phone\": \"9473829847\",\n        \"address\": \"kgksdfjgal\",\n        \"working_hours\": \"0239fsdok\",\n        \"description\": \"fsdkljfasdkj\",\n        \"service_type\": \"clinics\",\n        \"animal_type\": \"cat\"\n    }\n}"
+						},
+						{
+							"name": "status_false",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/service/34/edit",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"service",
+										"34",
+										"edit"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 17:38:40 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 17:38:40 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": false,\n    \"msg\": \"Service is not exist !\",\n    \"data\": []\n}"
+						}
+					]
+				},
+				{
+					"name": "show",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/service/3",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"service",
+								"3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "status_true",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/service/34",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"service",
+										"34"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 17:39:28 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 17:39:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": false,\n    \"msg\": \"Service is not exist !\",\n    \"data\": []\n}"
+						},
+						{
+							"name": "status_true",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/service/3",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"service",
+										"3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 17:39:49 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 17:39:49 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"data\": {\n        \"user_id\": 1,\n        \"user_name\": \"islam\",\n        \"user_type\": \"admin\",\n        \"id\": 3,\n        \"name\": \"lk sdf  hfds\",\n        \"phone\": \"9473829847\",\n        \"address\": \"kgksdfjgal\",\n        \"working_hours\": \"0239fsdok\",\n        \"description\": \"fsdkljfasdkj\",\n        \"service_type\": \"clinics\",\n        \"animal_type\": \"cat\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "store",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\": \"1\",\n    \"name\": \"service rest \",\n    \"phone\": \"987987\",\n    \"address\": \"address test\",\n    \"working_hours\": \"all week day 10:00 - 18:00\",\n    \"description\": \"description test\",\n    \"service_type\": \"clinics\",\n    \"animal_type\": \"dog\"    \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/service/3",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"service",
+								"3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "status_ture",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_id\": \"1\",\n    \"name\": \"service rest \",\n    \"phone\": \"987987\",\n    \"address\": \"address test\",\n    \"working_hours\": \"all week day 10:00 - 18:00\",\n    \"description\": \"description test\",\n    \"service_type\": \"clinics\",\n    \"animal_type\": \"dog\"    \n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/service",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"service"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 17:52:15 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 17:52:15 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "54"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"user_id\": \"1\",\n        \"name\": \"service rest\",\n        \"phone\": \"987987\",\n        \"address\": \"address test\",\n        \"working_hours\": \"all week day 10:00 - 18:00\",\n        \"description\": \"description test\",\n        \"service_type\": \"clinics\",\n        \"animal_type\": \"dog\",\n        \"id\": 15\n    },\n    \"status\": true\n}"
+						},
+						{
+							"name": "status_false",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_id\": \"1\",\n  \n    \"description\": \"description test\",\n    \"service_type\": \"clinics\",\n    \"animal_type\": \"dog\"    \n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/service",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"service"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 17:52:35 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 17:52:35 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "53"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": false,\n    \"msg\": \"one or more fileds is invalid !\",\n    \"errors\": [\n        \"The name field is required.\",\n        \"The phone field is required.\",\n        \"The address field is required.\",\n        \"The working hours field is required.\"\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\": \"1\",\n    \"name\": \"service rest \",\n    \"phone\": \"987987\",\n    \"address\": \"address test\",\n    \"working_hours\": \"all week day 10:00 - 18:00\",\n    \"description\": \"description test\",\n    \"service_type\": \"clinics\",\n    \"animal_type\": \"dog\"    \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/service/143/update",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"service",
+								"143",
+								"update"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "status_true",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_id\": \"1\",\n    \"name\": \"service rest \",\n    \"phone\": \"987987\",\n    \"address\": \"address test\",\n    \"working_hours\": \"all week day 10:00 - 18:00\",\n    \"description\": \"description test\",\n    \"service_type\": \"clinics\",\n    \"animal_type\": \"dog\"    \n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/service/14/update",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"service",
+										"14",
+										"update"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 17:53:26 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 17:53:26 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"msg\": \"Service has been Updated .\"\n}"
+						},
+						{
+							"name": "status_false",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_id\": \"1\",\n    \"name\": \"service rest \",\n    \"phone\": \"987987\",\n    \"address\": \"address test\",\n    \"working_hours\": \"all week day 10:00 - 18:00\",\n    \"description\": \"description test\",\n    \"service_type\": \"clinics\",\n    \"animal_type\": \"dog\"    \n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/service/143/update",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"service",
+										"143",
+										"update"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 17:53:50 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 17:53:50 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": false,\n    \"msg\": \"Service is not exist !\"\n}"
+						}
+					]
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/service/4",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"service",
+								"4"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "status_false",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/service/42",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"service",
+										"42"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 17:40:18 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 17:40:18 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": false,\n    \"msg\": \"Service is not exist !\"\n}"
+						},
+						{
+							"name": "status_true",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/service/4",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"service",
+										"4"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 17:40:36 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 19 Jun 2023 17:40:36 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "56"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"msg\": \"Service has been deleted successfuly .\"\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

@@ -94,6 +94,11 @@ Route::middleware('auth')->group(function (){
 
     //schema
     Route::get('schema' , [SchemaController::class , 'index'])->name('schema.index'); 
+
+    //Postman download file 
+    Route::get('postman', function (){
+        return response()->download('download/Islam API.postman_collection.json');
+    })->name('download.postman'); 
 });
 
 // ######################
