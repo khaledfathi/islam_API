@@ -7,6 +7,7 @@ use App\Http\Requests\API\Service\StoreServiceRequest;
 use App\Http\Requests\API\Service\UpdateServiceRequest;
 use App\Repository\Contract\ServiceRepositoryContract;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class ServiceController extends Controller
 {
@@ -96,17 +97,29 @@ class ServiceController extends Controller
     }
     public function update(UpdateServiceRequest $request)
     {
-        $update = $this->serviceProvider->update((array)$request->all() , $request->id); 
-        if ($update)
-        {
-            return response()->json([
-                'status'=>true,
-                'msg'=>"Service has been Updated .",
-            ]);
-        } 
+     
+        //prepearing data
+        $data = (array)$request->all(); 
+        $record =$this->serviceProvider->show($request->id); 
+        if ($record){
+            if ($request->has('file')){
+                $file= $request->file('file'); 
+                $data['image']=uploadeFile($file , 'service-image'); 
+                //delete old file  
+                ($record->image)?File::delete($record->image): null;
+            }
+            //update record
+            $update = $this->serviceProvider->update($data , $request->id);
+            if ($update){
+                return response()->json([
+                    'status'=>true,
+                    'msg'=>"Service has been Updated .",
+                ]);
+            }
+        }
         return response()->json([
             'status'=>false,
-            'msg'=>"Service is not exist !",
+            'msg'=>'service is not exist .'
         ]);
     }
 

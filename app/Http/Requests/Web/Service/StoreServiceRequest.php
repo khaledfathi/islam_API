@@ -32,6 +32,7 @@ class StoreServiceRequest extends FormRequest
             'address'=>'required',
             'working_hours'=>'required',
             'description'=>'nullable',
+            'image'=>'required|mimes:jpg,jpge,bmp,png,tiff,webp,heif|max:10000',
             'service_type'=>['required' , new Enum(ServiceType::class)],
             'animal_type'=>['required' , new Enum(AnimalType::class)],
             'approval'=>[new Enum(Approval::class)], 

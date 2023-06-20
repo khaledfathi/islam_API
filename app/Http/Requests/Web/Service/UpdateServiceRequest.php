@@ -32,6 +32,7 @@ class UpdateServiceRequest extends FormRequest
             'address'=>'sometimes|required',
             'working_hours'=>'sometimes|required',
             'description'=>'nullable',
+            'image'=>'sometimes|required|mimes:jpg,jpge,bmp,png,tiff,webp,heif|max:10000',
             'service_type'=>['sometimes' , 'required' , new Enum(ServiceType::class)],
             'animal_type'=>[ new Enum(AnimalType::class)],
             'approval'=>[new Enum(Approval::class)], 

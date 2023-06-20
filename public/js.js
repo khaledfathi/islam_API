@@ -21,7 +21,7 @@ let data ={
     approval:"approved"
 }
 function eventtAction (){
-    ajax( offline+'api/service/' , 'post' , data , (fileUpload.value)?fileUpload:null).then((res)=>{
+    ajax( offline+'api/service/1/update' , 'post' , data , (fileUpload.value)?fileUpload:null).then((res)=>{
         console.log(res); 
     }); 
 
