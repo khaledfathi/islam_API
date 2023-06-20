@@ -18,6 +18,7 @@ class ProductRepository implements ProductRepositoryContract{
                 'products.name as product_name',
                 'products.price',
                 'products.category',
+                'products.approval',
                 'products.description',
                 'products.image as product_image',
                 'users.id as user_id',
@@ -40,6 +41,7 @@ class ProductRepository implements ProductRepositoryContract{
             'name'=>'required ',
             'price' => 'required , integer only ',
             'description'=>'optional ', 
+            'approval'=>'required , allowed [pending, approved ,rejected]',
             'category' => "required , accept these value ['food' ,'toys','accessories','beds','grooming']",
             'file'=> 'required , accepted type [jpg,jpge,bmp,png,tiff,webp,heif] , max size: 10000 KB ',
             'user_id' => 'nullable '

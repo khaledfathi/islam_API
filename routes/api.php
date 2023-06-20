@@ -34,6 +34,7 @@ Route::group(['prefix'=>'user'] , function (){
 Route::group(['prefix'=>'product'], function (){
     Route::get('' , [ProductController::class , 'index']); 
     Route::get('filter/{column}/{category}' , [ProductController::class , 'indexFilter']); 
+    Route::get('filter/{column}/{approval}' , [ProductController::class , 'indexFilter']); 
     Route::post('' , [ProductController::class , 'store']); 
     Route::get('create' , [ProductController::class , 'create']); 
     Route::get('{id}/edit' , [ProductController::class , 'edit']); 

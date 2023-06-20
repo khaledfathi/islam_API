@@ -52,6 +52,14 @@
                     <textarea style="resize:none;vertical-align:middle" name="description" id="" cols="30" rows="5"></textarea>
                 </div>
                 <div>
+                    <label for="">Status<span style="color:red">*</span></label>
+                    <select name="approval" id="">
+                        @foreach ($approval as $status)
+                            <option value="{{$status->value}}">{{$status->value}}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div>
                     <label for="">Image<span style="color:red">*</label>
                     <input type="file" name="image" id="">
                 </div>

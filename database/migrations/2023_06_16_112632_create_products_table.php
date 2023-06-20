@@ -18,6 +18,7 @@ return new class extends Migration
             $table->text('description')->nullable(true); 
             $table->enum('category', ['food' ,'toys','accessories','beds','grooming'])->nullable(false); 
             $table->text('image')->nullable(false); 
+            $table->enum('approval',['pending','approved','rejected'])->nullable(false)->default('pending'); 
             $table->timestamps();
             //FK
             $table->foreignId('user_id')->nullable(true)->references('id')->on('users')->onDelete('set null'); 

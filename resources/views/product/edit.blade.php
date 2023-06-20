@@ -61,6 +61,19 @@
                     <textarea style="resize:none;vertical-align:middle" name="description" id="" cols="30" rows="5">{{ $record->description }}</textarea>
                 </div>
                 <div>
+                    <label for="">Approval</label>
+                    <select name="approval" id="">
+                        @foreach ($approval as $status)
+                        @if ($record->approval == $status->value)
+                            <option selected value="{{$status->value}}">{{$status->value}}</option>
+                        @else
+                            <option value="{{$status->value}}">{{$status->value}}</option>
+                        @endif
+                        @endforeach
+                    </select>
+
+                </div>
+                <div>
                     <label for="">Preview</label>
                     <img style="vertical-align:middle" src="{{ asset($record->image) }}" alt="product image" width="100"
                         height="100">

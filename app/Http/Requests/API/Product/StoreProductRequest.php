@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\API\Product;
 
+use App\Enum\Approval;
 use App\Enum\Category;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Exceptions\HttpResponseException;
@@ -29,6 +30,7 @@ class StoreProductRequest extends FormRequest
             'price'=>'required|numeric', 
             'category'=>['required' , new Enum(Category::class)], 
             'file'=>'required|mimes:jpg,jpge,bmp,png,tiff,webp,heif|max:10000',
+            'approval'=>['required' , new Enum(Approval::class)],
             'user_id'=>'nullable|exists:users,id'
 
         ];

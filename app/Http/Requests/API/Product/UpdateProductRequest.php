@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\API\Product;
 
+use App\Enum\Approval;
 use App\Enum\Category;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Exceptions\HttpResponseException;
@@ -29,6 +30,7 @@ class UpdateProductRequest extends FormRequest
             'price'=>'sometimes|required|numeric', 
             'category'=>['sometimes' , new Enum(Category::class)], 
             'image'=>'sometimes|mimes:jpg,jpge,bmp,png,tiff,webp,heif|max:10000',
+            'approval'=>['sometimes' , new Enum(Approval::class)],
             'user_id'=>'nullable|exists:users,id'
 
         ];

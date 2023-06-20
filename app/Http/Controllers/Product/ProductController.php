@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Product;
 
+use App\Enum\Approval;
 use App\Enum\Category;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Web\Product\StoreProductRequest;
@@ -34,9 +35,11 @@ class ProductController extends Controller
     {
         $users = $this->userProvider->index(); 
         $categories = Category::cases(); 
+        $approval= Approval::cases(); 
         return view('product.create' , [
             'users'=> $users ,
-            'categories'=>$categories
+            'categories'=>$categories,
+            'approval'=>$approval
         ]); 
     }
    public function store (StoreProductRequest $request)
@@ -47,6 +50,7 @@ class ProductController extends Controller
             'price'=>$request->price,
             'description'=>$request->description,
             'category'=>$request->category,
+            'approval'=>$request->approval, 
             'user_id' =>$request->user_id,
         ]; 
         //store image file
@@ -62,10 +66,12 @@ class ProductController extends Controller
         $record = $this->productProvider->show($request->id); 
         $users= $this->userProvider->index();
         $categories = Category::cases(); 
+        $approval= Approval::cases(); 
         return view('product.edit',[
             'record'=>$record,
             'users'=>$users,
             'categories'=>$categories, 
+            'approval'=>$approval
         ]); 
     }
     public function update(UpdateProductRequest $request)

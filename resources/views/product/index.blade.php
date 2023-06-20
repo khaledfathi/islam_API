@@ -25,6 +25,7 @@
                     <th>Price</th>
                     <th>Category</th>
                     <th>Description</th>
+                    <th>Approval</th>
                     <th>Image</th>
                     <th>Edit</th>
                     <th>Delete</th>
@@ -43,6 +44,7 @@
                                 <td>{{ $product->price }}</td>
                                 <td>{{ $product->category }}</td>
                                 <td><pre>{{ $product->description }}<pre></td>
+                                <td>{{ $product->approval }}</td>
                                 @if ($product->product_image)
                                     <td><a href="{{ asset($product->product_image) }}">Image</a></td>
                                 @else

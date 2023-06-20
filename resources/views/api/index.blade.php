@@ -149,6 +149,14 @@
                     <td>filter product by category</td>
                     <td>{data:[...{}]}</td>
                 </tr>
+                <tr style="background-color:lightgray">
+                    <td>/api/product/filter/approval/{approval}</td>
+                    <td>GET</td>
+                    <td>{approval} allowed [pending , approved , rejected]</td>
+                    <td>filter product by Approval</td>
+                    <td>{data:[...{}]}</td>
+                </tr>
+
             </tbody>
         </table>
         <br><br>

@@ -32,7 +32,7 @@ class ProductController extends Controller
     }
 
     public function indexFilter(Request $request){
-        $allowed = ['category']; 
+        $allowed = ['category', 'approval']; 
         if(in_array($request->column , $allowed)){
             return response()->json ([
                 'data'=>$this->productProvider->index(filter:[$request->column => $request->category] ) 
@@ -62,6 +62,7 @@ class ProductController extends Controller
             'price'=>$request->price,
             'description'=>$request->description,
             'category'=>$request->category,
+            'approval'=>$request->approval,
             'user_id' =>$request->user_id,
         ]; 
         //store image file
