@@ -18,7 +18,7 @@ class UserRepository implements UserRepositoryContract{
             'name'=>'required ',
             'email' => 'required , unique , email only',
             'password'=>'required', 
-            'type' => "required , accept these value ['admin' , 'user' , 'suppler' , 'doctor']",
+            'type' => "required , accept these value ['admin' , 'user' , 'suppler' , 'clinics','shelter']",
             'phone'=> 'optional , number only ',
             'address'=>'optional',
             'image'=> 'optional , accepted type [jpg,jpge,bmp,png,tiff,webp,heif] , max size: 10000 KB ',

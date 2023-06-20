@@ -4,10 +4,16 @@ use App\Models\ServiceModel;
 use App\Repository\Contract\ServiceRepositoryContract;
 
 class ServiceRepository implements ServiceRepositoryContract{
-    public function index (bool $leftJoinUsers=false):object 
+    public function index (array $filter=[] , bool $leftJoinUsers=false):object 
     {
+        $query =  new ServiceModel ; 
+        if ($filter){
+            foreach($filter as $column=>$value){
+                $query = $query->where($column , $value); 
+            }
+        }
         if($leftJoinUsers){
-            return ServiceModel::leftJoin('users' , 'users.id' , '=' , 'services.user_id')->select(
+            $query =  $query->leftJoin('users' , 'users.id' , '=' , 'services.user_id')->select(            
                 'users.id as user_id', 
                 'users.name as user_name', 
                 'users.type as user_type',
@@ -19,9 +25,10 @@ class ServiceRepository implements ServiceRepositoryContract{
                 'services.description',
                 'services.service_type',
                 'services.animal_type'
-            )->get(); 
+            );
         }
-        return ServiceModel::get(); 
+
+        return $query->get(); 
     }
     public function store (array $data):object 
     {

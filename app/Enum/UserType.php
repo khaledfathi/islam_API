@@ -5,5 +5,7 @@ enum UserType : string {
     case user ='user'; 
     case admin = 'admin'; 
     case suppler = 'suppler'; 
-    case doctor = 'doctor'; 
+    case clinics= 'clinics'; 
+    case shelter= 'shelter'; 
+
 }

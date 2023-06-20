@@ -33,6 +33,7 @@ Route::group(['prefix'=>'user'] , function (){
 //product 
 Route::group(['prefix'=>'product'], function (){
     Route::get('' , [ProductController::class , 'index']); 
+    Route::get('filter/{column}/{category}' , [ProductController::class , 'indexFilter']); 
     Route::post('' , [ProductController::class , 'store']); 
     Route::get('create' , [ProductController::class , 'create']); 
     Route::get('{id}/edit' , [ProductController::class , 'edit']); 
@@ -55,6 +56,8 @@ Route::group(['prefix'=>'blog'], function (){
 //services 
 Route::group(['prefix'=>'service'], function (){
     Route::get('' , [ServiceController::class , 'index']); 
+    Route::get('filter/{column}/{type}' , [ServiceController::class , 'indexFilter']); 
+    Route::get('filter/{column}/{animal}' , [ServiceController::class , 'indexFilter']); 
     Route::post('' , [ServiceController::class , 'store']); 
     Route::get('create' , [ServiceController::class , 'create']); 
     Route::get('{id}/edit' , [ServiceController::class , 'edit']); 

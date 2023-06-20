@@ -142,6 +142,13 @@
                     <td>delete product by its ID</td>
                     <td>{status:false , msg:string} | {status:true , msg:string}</td>
                 </tr>
+                <tr style="background-color:lightgray">
+                    <td>/api/product/filter/category/{category}</td>
+                    <td>GET</td>
+                    <td>{category} allowed [food,toys,accessories,beds,grooming]</td>
+                    <td>filter product by category</td>
+                    <td>{data:[...{}]}</td>
+                </tr>
             </tbody>
         </table>
         <br><br>
@@ -276,6 +283,21 @@
                     <td>delete service by its ID</td>
                     <td>{status:false , msg:string} | {status:true , msg:string}</td>
                 </tr>
+                <tr style="background-color:lightgray">
+                    <td>/api/service/filter/service_type/{type}</td>
+                    <td>GET</td>
+                    <td>{type} service type [clinics , shelter]</td>
+                    <td>index all service belong to this type</td>
+                    <td>{data:[...{}]}</td>
+                </tr>
+                <tr style="background-color:lightgray">
+                    <td>/api/service/filter/animal_type/{type}</td>
+                    <td>GET</td>
+                    <td>{type} animal type [dog , cat]</td>
+                    <td>index all services that have this animal</td>
+                    <td>{data:[...{}]}</td>
+                </tr>
+
             </tbody>
         </table>
         <br><br>
@@ -340,7 +362,7 @@
     </div>
     <br><br>
     {{-- / auth API --}}
-    <h3><a href="{{route('download.postman')}}">Download Postman API examples</a></h3>
+    <h3><a href="{{ route('download.postman') }}">Download Postman API examples</a></h3>
 
     <br><br><br><br><br><br>
 @endsection

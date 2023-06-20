@@ -4,10 +4,16 @@ use App\Models\ProductModel;
 use App\Repository\Contract\ProductRepositoryContract; 
 
 class ProductRepository implements ProductRepositoryContract{
-    public function index (bool $leftJoinUsers=false ):object 
+    public function index (array $filter=[] , bool $leftJoinUsers=false ):object 
     {
+        $query =  new ProductModel ; 
+        if ($filter){
+            foreach($filter as $column=>$value){
+                $query = $query->where($column , $value); 
+            }
+        }
         if ($leftJoinUsers){
-            return ProductModel::leftJoin('users' , 'users.id' , '=' , 'products.user_id')->select(
+            $query = $query->leftJoin('users' , 'users.id' , '=' , 'products.user_id')->select(
                 'products.id as product_id',
                 'products.name as product_name',
                 'products.price',
@@ -20,9 +26,9 @@ class ProductRepository implements ProductRepositoryContract{
                 'users.type as user_type',
                 'users.phone',
                 'users.image as user_image',
-            )->get(); 
+            ); 
         }
-        return ProductModel::get(); 
+        return $query->get(); 
     }
     public function store (array $data ):object 
     {

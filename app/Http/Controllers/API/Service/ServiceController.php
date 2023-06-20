@@ -16,12 +16,21 @@ class ServiceController extends Controller
     ){
         $this->serviceProvider = $serviceProvider; 
     }
-    public function index ()
+    public function index (Request $request)
     {
         return response()->json([
-            'data'=>$this->serviceProvider->index(leftJoinUsers:true),
+            'data'=>$this->serviceProvider->index(leftJoinUsers:true) 
         ]); 
     } 
+    public function indexFilter(Request $request){
+        $allowed = ['service_type', 'animal_type']; 
+        if(in_array($request->column , $allowed)){
+            return response()->json ([
+                'data'=>$this->serviceProvider->index(filter:[$request->column=>$request->type] , leftJoinUsers:true) 
+            ]);
+        }
+        return abort(404); 
+    }
     public function store (StoreServiceRequest $request)
     {
         return response()->json([

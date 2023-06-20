@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
         'phone'=>'01125251090',
         'type'=>'admin'
        ]);
-       \App\Models\User::factory(10)->create();
+       \App\Models\User::factory(14)->create();
 
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',

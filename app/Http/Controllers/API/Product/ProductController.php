@@ -31,6 +31,16 @@ class ProductController extends Controller
         ]); 
     }
 
+    public function indexFilter(Request $request){
+        $allowed = ['category']; 
+        if(in_array($request->column , $allowed)){
+            return response()->json ([
+                'data'=>$this->productProvider->index(filter:[$request->column => $request->category] ) 
+            ]);
+        }
+        return abort(404); 
+    }
+
     /**
      * Show the form for creating a new resource.
      */

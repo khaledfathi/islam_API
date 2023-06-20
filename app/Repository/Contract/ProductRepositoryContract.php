@@ -3,7 +3,7 @@
 namespace App\Repository\Contract; 
 
 interface ProductRepositoryContract {
-    public function index (bool $leftJoinUsers=false ):object; 
+    public function index (array $filter=[] , bool $leftJoinUsers=false ):object; 
     public function store (array $data):object ; 
     public function show(mixed $id):object|null; 
     public function edit(mixed $id):object|null; 
