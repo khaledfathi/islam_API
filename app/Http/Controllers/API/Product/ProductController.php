@@ -35,7 +35,7 @@ class ProductController extends Controller
         $allowed = ['category', 'approval']; 
         if(in_array($request->column , $allowed)){
             return response()->json ([
-                'data'=>$this->productProvider->index(filter:[$request->column => $request->category] ) 
+                'data'=>$this->productProvider->index(filter:[$request->column => $request->find] ) 
             ]);
         }
         return abort(404); 

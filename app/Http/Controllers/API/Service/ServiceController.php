@@ -23,10 +23,10 @@ class ServiceController extends Controller
         ]); 
     } 
     public function indexFilter(Request $request){
-        $allowed = ['service_type', 'animal_type']; 
+        $allowed = ['service_type', 'animal_type' , 'approval']; 
         if(in_array($request->column , $allowed)){
             return response()->json ([
-                'data'=>$this->serviceProvider->index(filter:[$request->column=>$request->type] , leftJoinUsers:true) 
+                'data'=>$this->serviceProvider->index(filter:[$request->column=>$request->find] , leftJoinUsers:true) 
             ]);
         }
         return abort(404); 

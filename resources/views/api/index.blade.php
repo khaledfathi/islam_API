@@ -143,16 +143,16 @@
                     <td>{status:false , msg:string} | {status:true , msg:string}</td>
                 </tr>
                 <tr style="background-color:lightgray">
-                    <td>/api/product/filter/category/{category}</td>
+                    <td>/api/product/filter/category/{find}</td>
                     <td>GET</td>
-                    <td>{category} allowed [food,toys,accessories,beds,grooming]</td>
+                    <td>{find} allowed [food,toys,accessories,beds,grooming]</td>
                     <td>filter product by category</td>
                     <td>{data:[...{}]}</td>
                 </tr>
                 <tr style="background-color:lightgray">
-                    <td>/api/product/filter/approval/{approval}</td>
+                    <td>/api/product/filter/approval/{find}</td>
                     <td>GET</td>
-                    <td>{approval} allowed [pending , approved , rejected]</td>
+                    <td>{find} allowed [pending , approved , rejected]</td>
                     <td>filter product by Approval</td>
                     <td>{data:[...{}]}</td>
                 </tr>
@@ -292,17 +292,24 @@
                     <td>{status:false , msg:string} | {status:true , msg:string}</td>
                 </tr>
                 <tr style="background-color:lightgray">
-                    <td>/api/service/filter/service_type/{type}</td>
+                    <td>/api/service/filter/service_type/{find}</td>
                     <td>GET</td>
-                    <td>{type} service type [clinics , shelter]</td>
+                    <td>{find} allowed [clinics , shelter]</td>
                     <td>index all service belong to this type</td>
                     <td>{data:[...{}]}</td>
                 </tr>
                 <tr style="background-color:lightgray">
-                    <td>/api/service/filter/animal_type/{type}</td>
+                    <td>/api/service/filter/animal_type/{find}</td>
                     <td>GET</td>
-                    <td>{type} animal type [dog , cat]</td>
+                    <td>{find} allowed [dog , cat]</td>
                     <td>index all services that have this animal</td>
+                    <td>{data:[...{}]}</td>
+                </tr>
+                <tr style="background-color:lightgray">
+                    <td>/api/service/filter/approval/{find}</td>
+                    <td>GET</td>
+                    <td>{find}  allowed [pending, approved ,rejected]</td>
+                    <td>index all approved service</td>
                     <td>{data:[...{}]}</td>
                 </tr>
 
