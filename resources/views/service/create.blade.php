@@ -20,7 +20,7 @@
             @endif
         </div>
         <div>
-            <form action="{{ route('service.store') }}" method="post">
+            <form action="{{ route('service.store') }}" method="post" enctype="multipart/form-data">
                 @csrf
                 <div>
                     <label for="">User<span style="color:red">*</span></label>
@@ -52,6 +52,10 @@
                 <div>
                     <label for="">Description</label>
                     <textarea style="resize:none;vertical-align:middle" name="description" id="" cols="30" rows="5"></textarea>
+                </div>
+                <div>
+                    <label for="">Image<span style="color:red">*</label>
+                    <input type="file" name="image" id="">
                 </div>
                 <div>
                     <label for="">Approval<span style="color:red">*</label>

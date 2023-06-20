@@ -33,8 +33,27 @@ class ServiceController extends Controller
     }
     public function store (StoreServiceRequest $request)
     {
+        //preparing data to store 
+        $data = [
+            'user_id'=> $request->user_id,
+            'name'=> $request->name,
+            'phone'=> $request->phone,
+            'address'=> $request->address,
+            'working_hours'=> $request->working_hours,
+            'description'=> $request->description,
+            'service_type'=> $request->service_type,
+            'animal_type'=> $request->animal_type,
+            'approval'=> $request->approval,
+        ]; 
+        //store image file
+        $file = $request->file('file'); 
+        $data['image']=uploadeFile($file , 'service-image'); 
+        
+        //store record
+        $record = $this->serviceProvider->store($data); 
         return response()->json([
-            'data'=>$this->serviceProvider->store((array)$request->all()),
+            'record'=>$record,
+            'msg'=>'service has been stored successfuly.',
             'status'=>true
         ]); 
     }

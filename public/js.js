@@ -11,14 +11,17 @@ const online = 'http://ah.khaledfathi.com/';
 
 
 let data ={
-    'name':'fdsf',
-    'email':'qq@qq',
-    'password':'password',
-    'type':'user'
-
+    user_id:1,
+    name:"32",
+    phone:432,
+    address:"43",
+    working_hours:"dsa",
+    description:"dsa",
+    service_type:"clinics",
+    approval:"approved"
 }
 function eventtAction (){
-    ajax( offline+'api/service/2' , 'delete' , data , (fileUpload.value)?fileUpload:null).then((res)=>{
+    ajax( offline+'api/service/' , 'post' , data , (fileUpload.value)?fileUpload:null).then((res)=>{
         console.log(res); 
     }); 
 

@@ -11,6 +11,7 @@ use App\Http\Requests\Web\Service\UpdateServiceRequest;
 use App\Repository\Contract\ServiceRepositoryContract;
 use App\Repository\Contract\UserRepositoryContract;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class ServiceController extends Controller
 {
@@ -32,8 +33,25 @@ class ServiceController extends Controller
     } 
     public function store (StoreServiceRequest $request)
     {
-        $this->serviceProvider->store((array)$request->except('_token'));
-        return redirect(route('service.index')); 
+        //preparing data to store 
+        $data = [
+            'user_id'=> $request->user_id,
+            'name'=> $request->name,
+            'phone'=> $request->phone,
+            'address'=> $request->address,
+            'working_hours'=> $request->working_hours,
+            'description'=> $request->description,
+            'service_type'=> $request->service_type,
+            'animal_type'=> $request->animal_type,
+            'approval'=> $request->approval,
+        ]; 
+        //store image file
+        $file = $request->file('image'); 
+        $data['image']=uploadeFile($file , 'service-image'); 
+        
+        //store record
+        $record = $this->serviceProvider->store($data); 
+        return  redirect(route('service.index'));
     }
     public function show(Request $request)
     {
@@ -69,7 +87,19 @@ class ServiceController extends Controller
     }
     public function update(UpdateServiceRequest $request)
     {
-        $this->serviceProvider->update($request->except('_token'), $request->id); 
+        //prepearing data
+        $data = (array) $request->except('_token');
+        $record = $this->serviceProvider->show($request->id);
+        if ($record) {
+            if ($request->has('image')) {
+                $file = $request->file('image');
+                $data['image'] = uploadeFile($file, 'service-image');
+                //delete old file  
+                ($record->image) ? File::delete($record->image) : null;
+            }
+            //update record
+            $update = $this->serviceProvider->update($data, $request->id);
+        }
         return redirect(route('service.index')); 
     }
     public function destroy(Request $request)

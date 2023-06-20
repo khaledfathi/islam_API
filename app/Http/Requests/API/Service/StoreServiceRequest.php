@@ -34,7 +34,7 @@ class StoreServiceRequest extends FormRequest
             'working_hours'=>'required',
             'description'=>'nullable',
             'service_type'=>['required' , new Enum(ServiceType::class)],
-            'animal_type'=>['required' , new Enum(AnimalType::class)],
+            'animal_type'=>[ new Enum(AnimalType::class)],
             'approval'=>[new Enum(Approval::class)], 
         ];
     }

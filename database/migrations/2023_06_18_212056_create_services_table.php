@@ -18,6 +18,7 @@ return new class extends Migration
             $table->text('address')->nullable(false); 
             $table->string('working_hours')->nullable(true); 
             $table->text('description')->nullable(true); 
+            $table->text('image')->nullable(false); 
             $table->enum('service_type',['clinics' , 'shelter'])->nullable(false); 
             $table->enum('animal_type',['cat','dog'])->nullable(true); 
             $table->enum('approval',['pending','approved','rejected'])->nullable(false)->default('pending'); 

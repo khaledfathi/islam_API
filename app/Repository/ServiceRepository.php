@@ -23,6 +23,7 @@ class ServiceRepository implements ServiceRepositoryContract{
                 'services.address',
                 'services.working_hours',
                 'services.description',
+                'services.image',
                 'services.service_type',
                 'services.animal_type',
                 'services.approval'
@@ -48,6 +49,7 @@ class ServiceRepository implements ServiceRepositoryContract{
                 'services.address',
                 'services.working_hours',
                 'services.description',
+                'services.image',
                 'services.service_type',
                 'services.animal_type',
                 'services.approval'
@@ -71,6 +73,7 @@ class ServiceRepository implements ServiceRepositoryContract{
             'service_type' => 'required , accept these values only [clinics , shelter]',
             'animal_type' => 'nullable , accept these values only [cat , dog]',
             'approval'=>'required , allowed [pending, approved ,rejected]',
+            'image'=> 'required , accepted type [jpg,jpge,bmp,png,tiff,webp,heif] , max size: 10000 KB ',
         ]; 
     }
     public function update(array $data , int $id):bool

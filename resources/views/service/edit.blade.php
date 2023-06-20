@@ -20,7 +20,7 @@
             @endif
         </div>
         <div>
-            <form action="{{ route('service.update') }}" method="get">
+            <form action="{{ route('service.update') }}" method="post" enctype="multipart/form-data">
                 @csrf
                 <input type="hidden" name="id" value="{{$record->id}}">
                 <div>
@@ -62,6 +62,15 @@
                 <div>
                     <label for="">Description</label>
                     <textarea style="resize:none;vertical-align:middle" name="description" id="" cols="30" rows="5">{{ $record->description }}</textarea>
+                </div>
+                <div>
+                    <label for="">Preview</label>
+                    <img style="vertical-align:middle" src="{{ asset($record->image) }}" alt="product image" width="100"
+                        height="100">
+                </div>
+                <div>
+                    <label for="">Image<span style="color:red">*</label>
+                    <input type="file" name="image" id="">
                 </div>
                 <div>
                     <label for="">Approval<span style="color:red">*</label>

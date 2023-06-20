@@ -15,6 +15,7 @@ class ServiceModel extends Model
         'address',
         'working_hours',
         'description',
+        'image',
         'service_type',
         'animal_type',
         'approval',

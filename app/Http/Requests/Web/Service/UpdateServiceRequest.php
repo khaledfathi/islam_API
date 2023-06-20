@@ -33,7 +33,7 @@ class UpdateServiceRequest extends FormRequest
             'working_hours'=>'sometimes|required',
             'description'=>'nullable',
             'service_type'=>['sometimes' , 'required' , new Enum(ServiceType::class)],
-            'animal_type'=>['sometimes','required' , new Enum(AnimalType::class)],
+            'animal_type'=>[ new Enum(AnimalType::class)],
             'approval'=>[new Enum(Approval::class)], 
         ];
     }

@@ -33,6 +33,7 @@
                     <th>service_type</th>
                     <th>animal_type</th>
                     <th>approval</th>
+                    <th>Image</th>
                     <th>Edit</th>
                     <th>Delete</th>
                 </thead>
@@ -54,6 +55,13 @@
                                 <td>{{ $service->service_type }}</td>
                                 <td>{{ $service->animal_type }}</td>
                                 <td>{{ $service->approval }}</td>
+                                <td>
+                                    @if ($service->image)
+                                        <a href="{{asset($service->image)}}">Image</a>
+                                    @else
+                                        ---
+                                    @endif
+                                </td>
                                 <td><a href="{{route('service.edit' , $service->id)}}">Edit</a></td>
                                 <td><a href="{{route('service.destroy' , $service->id)}}">Delete</a></td>
                             </tr>
