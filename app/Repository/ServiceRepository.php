@@ -24,7 +24,8 @@ class ServiceRepository implements ServiceRepositoryContract{
                 'services.working_hours',
                 'services.description',
                 'services.service_type',
-                'services.animal_type'
+                'services.animal_type',
+                'services.approval'
             );
         }
 
@@ -32,7 +33,7 @@ class ServiceRepository implements ServiceRepositoryContract{
     }
     public function store (array $data):object 
     {
-        return ServiceModel::create($data); 
+        return ServiceModel::create($data)->first(); 
     }
     public function show(mixed $id , bool $leftJoinUsers=false):object|null 
     {
@@ -48,7 +49,8 @@ class ServiceRepository implements ServiceRepositoryContract{
                 'services.working_hours',
                 'services.description',
                 'services.service_type',
-                'services.animal_type'
+                'services.animal_type',
+                'services.approval'
             )->where('services.id' , $id)->first(); 
         }
         return ServiceModel::where('id' , $id)->first(); 
@@ -67,7 +69,8 @@ class ServiceRepository implements ServiceRepositoryContract{
             'working_hours' => 'required',
             'description' => 'optional',
             'service_type' => 'required , accept these values only [clinics , shelter]',
-            'animal_type' => 'nullable , accept these values only [cat , dog]'
+            'animal_type' => 'nullable , accept these values only [cat , dog]',
+            'approval'=>'required , allowed [pending, approved ,rejected]',
         ]; 
     }
     public function update(array $data , int $id):bool

@@ -20,6 +20,7 @@ return new class extends Migration
             $table->text('description')->nullable(true); 
             $table->enum('service_type',['clinics' , 'shelter'])->nullable(false); 
             $table->enum('animal_type',['cat','dog'])->nullable(true); 
+            $table->enum('approval',['pending','approved','rejected'])->nullable(false)->default('pending'); 
             $table->timestamps();
             //FK
             $table->foreignId('user_id')->nullable(true)->references('id')->on('users')->onDelete('set null'); 

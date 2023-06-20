@@ -32,6 +32,7 @@
                     <th>description</th>
                     <th>service_type</th>
                     <th>animal_type</th>
+                    <th>approval</th>
                     <th>Edit</th>
                     <th>Delete</th>
                 </thead>
@@ -52,6 +53,7 @@
                                 <td><pre>{{ $service->description }}<pre></td>
                                 <td>{{ $service->service_type }}</td>
                                 <td>{{ $service->animal_type }}</td>
+                                <td>{{ $service->approval }}</td>
                                 <td><a href="{{route('service.edit' , $service->id)}}">Edit</a></td>
                                 <td><a href="{{route('service.destroy' , $service->id)}}">Delete</a></td>
                             </tr>

@@ -3,6 +3,7 @@
 namespace App\Http\Requests\Web\Service;
 
 use App\Enum\AnimalType;
+use App\Enum\Approval;
 use App\Enum\ServiceType;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rules\Enum;
@@ -33,7 +34,7 @@ class UpdateServiceRequest extends FormRequest
             'description'=>'nullable',
             'service_type'=>['sometimes' , 'required' , new Enum(ServiceType::class)],
             'animal_type'=>['sometimes','required' , new Enum(AnimalType::class)],
-
+            'approval'=>[new Enum(Approval::class)], 
         ];
     }
 }

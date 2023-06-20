@@ -54,6 +54,14 @@
                     <textarea style="resize:none;vertical-align:middle" name="description" id="" cols="30" rows="5"></textarea>
                 </div>
                 <div>
+                    <label for="">Approval<span style="color:red">*</label>
+                    <select name="approval" id="">
+                        @foreach ($approval as $status)
+                            <option value="{{$status->value}}">{{$status->value}}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div>
                     <label for="">Service Type<span style="color:red">*</label>
                     <select name="service_type" id="">
                         @foreach ($serviceTypes as $type)

@@ -17,6 +17,7 @@ class ServiceModel extends Model
         'description',
         'service_type',
         'animal_type',
+        'approval',
         'user_id'
     ];
     protected $hidden = [

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Service;
 
 use App\Enum\AnimalType;
+use App\Enum\Approval;
 use App\Enum\ServiceType;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Web\Service\StoreServiceRequest;
@@ -44,11 +45,13 @@ class ServiceController extends Controller
         $users = $this->userProvider->index();
         $serviceTypes = ServiceType::cases(); 
         $animalTypes = Animaltype::cases(); 
+        $approval = Approval::cases();
         return view('service.edit', [
             'record'=> $record, 
             'users'=>$users,
             'serviceTypes'=>$serviceTypes,
-            'animalTypes'=>$animalTypes
+            'animalTypes'=>$animalTypes,
+            'approval'=>$approval
         ]); 
     }
     public function create()
@@ -56,10 +59,12 @@ class ServiceController extends Controller
         $users = $this->userProvider->index();
         $serviceTypes = ServiceType::cases(); 
         $animalTypes = Animaltype::cases(); 
+        $approval = Approval::cases();
         return view('service.create',[
             'users'=>$users,
             'serviceTypes'=>$serviceTypes,
-            'animalTypes'=>$animalTypes
+            'animalTypes'=>$animalTypes,
+            'approval' => $approval
         ]); 
     }
     public function update(UpdateServiceRequest $request)
