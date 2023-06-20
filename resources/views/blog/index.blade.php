@@ -30,6 +30,7 @@
                     <th>Title</th>
                     <th>abstract</th>
                     <th>artical</th>
+                    <th>Image</th>
                     <th>Edit</th>
                     <th>Delete</th>
                 </thead>
@@ -59,6 +60,7 @@
                                         Empty
                                     @endif
                                 </td>
+                                <td><a href="{{asset($blog->image)}}">Image</a></td>
                                 <td><a href="{{route('blog.edit' , $blog->blog_id)}}">Edit</a></td>
                                 <td><a href="{{route('blog.destroy' , $blog->blog_id)}}">Delete</a></td>
                             </tr>

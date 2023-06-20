@@ -60,6 +60,14 @@
                     <textarea style="resize:none;vertical-align:middle" name="article" id="" cols="30" rows="5">{{$record->article}}</textarea>
                 </div>
                 <div>
+                    <label for="">Preview</label>
+                    <img style="vertical-align:middle" src="{{ asset($record->image) }}" alt="product image" width="100"height="100">
+                </div>
+                <div>
+                    <label for="">Imagee</label>
+                    <input type="file" name="image" id="">
+                </div>
+                <div>
                     <input type="submit" value="Update">
                 </div>
             </form>

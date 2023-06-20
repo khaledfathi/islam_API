@@ -16,6 +16,7 @@ class BlogRepository implements BlogRepositoryContract {
                 'blogs.time',
                 'blogs.abstract',
                 'blogs.article',
+                'blogs.image',
             )->get(); 
         }else if ($api){
              return BlogModel::leftJoin('users' , 'users.id' , '=' , 'blogs.user_id')->select(
@@ -26,6 +27,7 @@ class BlogRepository implements BlogRepositoryContract {
                 'blogs.time',
                 'blogs.abstract',
                 'blogs.article',
+                'blogs.image',
             )->get(); 
  
         }
@@ -47,6 +49,7 @@ class BlogRepository implements BlogRepositoryContract {
                 'blogs.time',
                 'blogs.abstract',
                 'blogs.article',
+                'blogs.image'
             )->where('blogs.id' , $id)->first(); 
         }elseif($api){
             return BlogModel::leftJoin('users' , 'users.id' , '=' , 'blogs.user_id')->select(
@@ -57,6 +60,7 @@ class BlogRepository implements BlogRepositoryContract {
                 'blogs.time',
                 'blogs.abstract',
                 'blogs.article',
+                'blogs.image'
             )->where('blogs.id' , $id)->first(); 
 
         }
@@ -73,7 +77,8 @@ class BlogRepository implements BlogRepositoryContract {
             'time' => 'required | stander datetime format ISO8601 | same as this ( yyyy-mm-ddTxx:xx )', 
             'title'=>'required ',
             'abstract'=>'nullable ',
-            'article'=>'nullable '
+            'article'=>'nullable ',
+            'image'=> 'required , accepted type [jpg,jpge,bmp,png,tiff,webp,heif] , max size: 10000 KB ',
         ]; 
 
     }

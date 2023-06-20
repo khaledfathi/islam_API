@@ -50,6 +50,10 @@
                     <textarea style="resize:none;vertical-align:middle" name="article" id="" cols="30" rows="5"></textarea>
                 </div>
                 <div>
+                    <label for="">Image</label>
+                    <input type="file" name="image">
+                </div>
+                <div>
                     <input type="submit" value="Save">
                 </div>
 

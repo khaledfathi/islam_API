@@ -46,20 +46,25 @@ class BlogController extends Controller
      */
     public function store(StoreBlogRequest $request)
     {
-        //preparing data to store 
-        $data = [
-            'user_id'=>$request->user_id, 
-            'time'=>$request->time,
-            'title'=>$request->title,
-            'abstract'=>$request->abstract,
-            'article'=>$request->article,
-        ]; 
-        $record = $this->blogProvider->store($data); 
-        return response()->json([
-            'status'=>true,
-            'msg'=>"Blog has been stored .",
-            'record'=>$record
-        ]); 
+        // //preparing data to store 
+        // $data = [
+        //     'user_id'=>$request->user_id, 
+        //     'time'=>$request->time,
+        //     'title'=>$request->title,
+        //     'abstract'=>$request->abstract,
+        //     'article'=>$request->article,
+        // ]; 
+        // //store image file
+        // $file = $request->file('image'); 
+        // $data['image']=uploadeFile($file , 'blog-image'); 
+        
+        // //store record
+        // $record = $this->blogProvider->store($data); 
+        // return response()->json([
+        //     'record'=>$record,
+        //     'msg'=>"Blog has been stored successfuly.",
+        //     'status'=>true
+        // ]); 
     }
 
     /**

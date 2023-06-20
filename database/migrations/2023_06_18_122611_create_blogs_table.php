@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('title')->nullable(false); 
             $table->text('abstract')->nullable(true); 
             $table->text('article')->nullable(true); 
+            $table->text('image')->nullable(false); 
             $table->timestamps();
             //FK
             $table->foreignId('user_id')->nullable(true)->references('id')->on('users')->onDelete('set null'); 

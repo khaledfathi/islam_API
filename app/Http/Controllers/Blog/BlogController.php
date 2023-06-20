@@ -8,6 +8,7 @@ use App\Http\Requests\Web\Blog\UpdateBlogRequest;
 use App\Repository\Contract\BlogRepositoryContract;
 use App\Repository\Contract\UserRepositoryContract;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class BlogController extends Controller
 {
@@ -47,8 +48,21 @@ class BlogController extends Controller
      */
     public function store(StoreBlogRequest $request)
     {
-        $this->blogProvider->store((array)$request->except('_token')); 
-        return redirect(route('blog.index')); 
+         //preparing data to store 
+        $data = [
+            'user_id'=>$request->user_id, 
+            'time'=>$request->time,
+            'title'=>$request->title,
+            'abstract'=>$request->abstract,
+            'article'=>$request->article,
+        ]; 
+        //store image file
+        $file = $request->file('image'); 
+        $data['image']=uploadeFile($file , 'blog-image'); 
+        
+        //store record
+        $record = $this->blogProvider->store($data); 
+        return  redirect(route('blog.index'));
     }
 
     /**
@@ -82,8 +96,21 @@ class BlogController extends Controller
      */
     public function update(UpdateBlogRequest $request)
     {
-        $this->blogProvider->update((array)$request->except(['_token', 'id']) , $request->id);
-        return redirect(route('blog.index'));  
+        //prepearing data
+        $data = (array) $request->except('_token');
+        $record = $this->blogProvider->show($request->id);
+        if ($record) {
+            if ($request->has('image')) {
+                $file = $request->file('image');
+                $data['image'] = uploadeFile($file, 'blog-image');
+                //delete old file  
+                ($record->image) ? File::delete($record->image) : null;
+            }
+            //update record
+            $update = $this->blogProvider->update($data, $request->id);
+        }
+        return redirect(route('blog.index')); 
+
     }
 
     /**

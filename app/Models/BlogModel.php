@@ -14,6 +14,7 @@ class BlogModel extends Model
         'title', 
         'abstract', 
         'article', 
+        'image',
         'user_id'
     ];
     protected $hidden = [
