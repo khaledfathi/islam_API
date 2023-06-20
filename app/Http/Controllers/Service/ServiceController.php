@@ -104,8 +104,12 @@ class ServiceController extends Controller
     }
     public function destroy(Request $request)
     {
-        $this->serviceProvider->destroy($request->id); 
-        return back(); 
+        $record = $this->serviceProvider->show($request->id); 
+        if ($record){
+            File::delete($record->image);
+            $this->serviceProvider->destroy($request->id); 
+        }
+        return redirect(route('service.index')); 
     }
 
 }

@@ -124,15 +124,18 @@ class ServiceController extends Controller
 
     public function destroy(Request $request)
     {
-       if ($this->serviceProvider->destroy($request->id)){
+        $found = $this->serviceProvider->show($request->id); 
+        if ($found){
+            ($found->image)?File::delete($found->image):null;  
+            $this->serviceProvider->destroy($request->id);
             return response()->json([
-                'status'=>true,
-                'msg'=>'Service has been deleted successfuly .'
+                'status'=>true, 
+                'msg'=>'service has been deleted successfuly.'
             ]); 
-       }
-            return response()->json([
-                'status'=>false,
-                'msg'=>'Service is not exist !',
-            ]); 
+        }
+        return response()->json([
+            'status'=>false,
+            'msg'=>'service is not exist !',
+        ]); 
     }
 }

@@ -118,7 +118,12 @@ class BlogController extends Controller
      */
     public function destroy(Request $request)
     {
-       $this->blogProvider->destroy($request->id);  
-       return back(); 
+        $record = $this->blogProvider->show($request->id); 
+        if ($record){
+            File::delete($record->image);
+            $this->blogProvider->destroy($request->id); 
+        }
+        return redirect(route('blog.index')); 
+
     }
 }

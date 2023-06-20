@@ -139,15 +139,18 @@ class BlogController extends Controller
      */
     public function destroy(Request $request)
     {
-       if ($this->blogProvider->destroy($request->id)){
+        $found = $this->blogProvider->show($request->id); 
+        if ($found){
+            ($found->image)?File::delete($found->image):null;  
+            $this->blogProvider->destroy($request->id);
             return response()->json([
-                'status'=>true,
-                'msg'=>'Post has been deleted successfuly .'
+                'status'=>true, 
+                'msg'=>'Post has been deleted successfuly.'
             ]); 
-       }
-            return response()->json([
-                'status'=>false,
-                'msg'=>'Post is not exist !',
-            ]); 
+        }
+        return response()->json([
+            'status'=>false,
+            'msg'=>'Post is not exist !',
+        ]); 
     }
 }
