@@ -8,6 +8,7 @@ use App\Http\Requests\API\Blog\UpdateBlogRequest;
 use App\Repository\Contract\BlogRepositoryContract;
 use App\Repository\Contract\UserRepositoryContract;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class BlogController extends Controller
 {
@@ -46,25 +47,25 @@ class BlogController extends Controller
      */
     public function store(StoreBlogRequest $request)
     {
-        // //preparing data to store 
-        // $data = [
-        //     'user_id'=>$request->user_id, 
-        //     'time'=>$request->time,
-        //     'title'=>$request->title,
-        //     'abstract'=>$request->abstract,
-        //     'article'=>$request->article,
-        // ]; 
-        // //store image file
-        // $file = $request->file('image'); 
-        // $data['image']=uploadeFile($file , 'blog-image'); 
+        //preparing data to store 
+        $data = [
+            'user_id'=>$request->user_id, 
+            'time'=>$request->time,
+            'title'=>$request->title,
+            'abstract'=>$request->abstract,
+            'article'=>$request->article,
+        ]; 
+        //store image file
+        $file = $request->file('file'); 
+        $data['image']=uploadeFile($file , 'blog-image'); 
         
-        // //store record
-        // $record = $this->blogProvider->store($data); 
-        // return response()->json([
-        //     'record'=>$record,
-        //     'msg'=>"Blog has been stored successfuly.",
-        //     'status'=>true
-        // ]); 
+        //store record
+        $record = $this->blogProvider->store($data); 
+        return response()->json([
+            'record'=>$record,
+            'msg'=>"Blog has been stored successfuly.",
+            'status'=>true
+        ]); 
     }
 
     /**
@@ -109,17 +110,29 @@ class BlogController extends Controller
      */
     public function update(UpdateBlogRequest $request)
     {
-        if($this->blogProvider->update((array)$request->all() , $request->id)){
-            return response()->json([
-                'status'=>true,
-                'msg'=>"Blog has been Updated .",
-            ]); 
-        }; 
-    return response()->json([
-        'status'=>false,
-        'msg'=>'Post is not exist',
-    ]); 
-
+        //prepearing data
+        $data = (array)$request->all(); 
+        $record =$this->blogProvider->show($request->id); 
+        if ($record){
+            if ($request->has('file')){
+                $file= $request->file('file'); 
+                $data['image']=uploadeFile($file , 'blog-image'); 
+                //delete old file  
+                ($record->image)?File::delete($record->image): null;
+            }
+            //update record
+            $update = $this->blogProvider->update($data , $request->id);
+            if ($update){
+                return response()->json([
+                    'status'=>true,
+                    'msg'=>" Post has been Updated .",
+                ]);
+            }
+        }
+        return response()->json([
+            'status'=>false,
+            'msg'=>'service is not exist .'
+        ]);
     }
     /**
      * Remove the specified resource from storage.

@@ -26,6 +26,7 @@ class UpdateBlogRequest extends FormRequest
             'user_id'=>'nullable|exists:users,id',
             'time' => 'sometimes|required|date_format:Y-m-d\TH:i', 
             'title'=>'sometimes|required', 
+            'file'=>'sometimes|required|mimes:jpg,jpge,bmp,png,tiff,webp,heif|max:10000',
         ];
     }
     protected function failedValidation(\Illuminate\Contracts\Validation\Validator $validator)

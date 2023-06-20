@@ -97,7 +97,6 @@ class ServiceController extends Controller
     }
     public function update(UpdateServiceRequest $request)
     {
-     
         //prepearing data
         $data = (array)$request->all(); 
         $record =$this->serviceProvider->show($request->id); 

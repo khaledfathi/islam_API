@@ -11,17 +11,14 @@ const online = 'http://ah.khaledfathi.com/';
 
 
 let data ={
-    user_id:1,
-    name:"32",
-    phone:432,
-    address:"43",
-    working_hours:"dsa",
-    description:"dsa",
-    service_type:"clinics",
-    approval:"approved"
+    time : "2020-01-01T10:10",
+    user_id : "1",
+    title : "dsadsa", 
+    abstract : "dsad",
+    article : "dsa"
 }
 function eventtAction (){
-    ajax( offline+'api/service/1/update' , 'post' , data , (fileUpload.value)?fileUpload:null).then((res)=>{
+    ajax( offline+'api/blog/' , 'post' , data , (fileUpload.value)?fileUpload:null).then((res)=>{
         console.log(res); 
     }); 
 
