@@ -7,7 +7,7 @@
 
 @section('content')
         <div>
-            <h3>Service Table</h3>
+            <h3>Database Schema</h3>
         </div>
         <div>
             <img style="width:100vw" src="{{asset('assets/images/schema_image.svg')}}" alt="schema">
