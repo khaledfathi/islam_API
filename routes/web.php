@@ -39,7 +39,7 @@ Route::middleware('auth')->group(function (){
     Route::get ('logout', [AuthController::class , 'logout'])->name('auth.logout'); 
 
     //API 
-    Route::get('api', fn ()=> view('api.index'))->name('api'); 
+    Route::get('api', fn ()=> view('api.index'))->name('api.index'); 
 
     //users
     Route::group(['prefix'=>'user'] , function (){
@@ -104,8 +104,8 @@ Route::middleware('auth')->group(function (){
     //Backup 
     Route::group(['prefix'=>'backup'] , function (){
         Route::get('',[BackupController::class , 'index'])->name('backup.index'); 
-        Route::get('export-db',[BackupController::class , 'exportDB'])->name('backup.exportDB'); 
-        Route::get('export-files',[BackupController::class , 'exportFiles'])->name('backup.exportFiles'); 
+        Route::get('export',[BackupController::class , 'export'])->name('backup.export'); 
+        Route::get('import',[BackupController::class , 'import'])->name('backup.import'); 
     }); 
 });
 

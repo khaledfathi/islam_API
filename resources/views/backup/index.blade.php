@@ -1,10 +1,12 @@
 @extends('layout.main')
 @section('title', 'backup')
-{{-- @section('active-user' , 'active-button') --}}
+@section('active-backup', 'active-button')
 @section('links')
-    {{-- <link rel="stylesheet" href="{{asset('assets/css/user/style.css')}}"> --}}
+    <link rel="stylesheet" href="{{ asset('assets/css/backup/style.css') }}">
 @endsection
-@section('scripts', '')
+@section('scripts')
+    <script src="{{ asset('assets/js/backup/js.js') }}"></script>
+@endsection
 
 @section('content')
     <div>
@@ -12,26 +14,27 @@
             <h3>Import/Export</h3>
         </div>
         <div>
-            <div>
-                <label for="">Expot </label>
-                <a href="{{route('backup.exportDB')}}">Download Database Backup</a>
-                <a href="{{route('backup.exportFiles')}}">Download Files Backup</a>
+            <div class="export">
+                <label for="">Export </label>
+                <button id="download">Download</button>
             </div>
-            <div>
+            {{-- <div class="import">
                 <form action="" method="post" enctype="multipart/form-data">
                     @csrf
                     <div>
-                        <label for="">Import Database</label>
-                        <input type="file" name="db-files" id="">
-                    </div>
-                    <div>
-                        <label for="">Import Files</label>
-                        <input type="file" name="image-files" id="">
+                        <label for="">Import</label>
+                        <input type="file" name="file" id="">
                     </div>
                     <div>
                         <input type="submit" value="Upload">
                     </div>
                 </form>
+            </div> --}}
+            <div class="msg-wrapper" id="msg-box">
+                <div class="msg">
+                    <h3>Preparing to backup . . . </h3>
+                    <p>Please don't close this page , it may take a long time</p>
+                </div>
             </div>
         </div>
     </div>

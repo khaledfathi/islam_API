@@ -20,7 +20,8 @@
         <a class="@yield('active-product')" href="{{ route('product.index') }}"> Products </a>
         <a class="@yield('active-service')" href="{{ route('service.index') }}"> service </a>
         <a class="@yield('active-blog')" href="{{ route('blog.index') }}"> Blogs </a>
-        <a class="@yield('active-api')" href="{{ route('api') }}"> API </a>
+        <a class="@yield('active-api')" href="{{ route('api.index') }}"> API </a>
+        <a class="@yield('active-backup')" href="{{ route('backup.index') }}"> BackUp </a>
         <a class="@yield('active-schema')" href="{{ route('schema.index') }}"> Schema </a>
         <a class="@yield('active-login-tester')" href="{{ route('loginTester.index') }}" style="width:140px;"> Login Tester </a>
         |
