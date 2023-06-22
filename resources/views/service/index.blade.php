@@ -53,7 +53,7 @@
                                 <td>{{ $service->working_hours }}</td>
                                 <td><pre>{{ $service->description }}<pre></td>
                                 <td>{{ $service->service_type }}</td>
-                                <td>{{ ($service->animal_type)?$service->animal_type:'---'; }}</td>
+                                <td>{{ ($service->animal_type)?$service->animal_type:'---'}}</td>
                                 <td>{{ $service->approval }}</td>
                                 <td>
                                     @if ($service->image)

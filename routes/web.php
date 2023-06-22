@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Backup\BackupController;
 use App\Http\Controllers\Blog\BlogController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Home\HomeController;
@@ -99,6 +100,13 @@ Route::middleware('auth')->group(function (){
     Route::get('postman', function (){
         return response()->download('download/Islam API.postman_collection.json');
     })->name('download.postman'); 
+
+    //Backup 
+    Route::group(['prefix'=>'backup'] , function (){
+        Route::get('',[BackupController::class , 'index'])->name('backup.index'); 
+        Route::get('export-db',[BackupController::class , 'exportDB'])->name('backup.exportDB'); 
+        Route::get('export-files',[BackupController::class , 'exportFiles'])->name('backup.exportFiles'); 
+    }); 
 });
 
 // ######################
