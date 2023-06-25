@@ -35,7 +35,7 @@ class UpdateServiceRequest extends FormRequest
             'file'=>'sometimes|required|mimes:jpg,jpge,bmp,png,tiff,webp,heif|max:10000',
             'description'=>'nullable',
             'service_type'=>['sometimes' , 'required' , new Enum(ServiceType::class)],
-            'animal_type'=>['sometimes','required' , new Enum(AnimalType::class)],
+            'animal_type'=>['nullable' , new Enum(AnimalType::class)],
             'approval'=>[new Enum(Approval::class)], 
 
         ];

@@ -125,6 +125,7 @@ class ProductController extends Controller
     {
         //prepearing data
         $data = (array)$request->except('user_id'); 
+        // $data = (array)$request->all(); 
         $record =$this->productProvider->show($request->id); 
         if ($record){
             if ($request->has('file')){
