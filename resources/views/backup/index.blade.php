@@ -18,7 +18,7 @@
                 <label for="">Export </label>
                 <button id="download">Download</button>
             </div>
-            {{-- <div class="import">
+            <div class="import">
                 <form action="" method="post" enctype="multipart/form-data">
                     @csrf
                     <div>
@@ -29,7 +29,7 @@
                         <input type="submit" value="Upload">
                     </div>
                 </form>
-            </div> --}}
+            </div>
             <div class="msg-wrapper" id="msg-box">
                 <div class="msg">
                     <h3>Preparing to backup . . . </h3>

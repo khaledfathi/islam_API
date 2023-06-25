@@ -6,6 +6,7 @@ use App\Http\Requests\API\User\StoreUserRequest;
 use App\Http\Requests\API\User\UpdateUserRequest;
 use App\Models\User as UserModel;
 use App\Repository\Contract\UserRepositoryContract;
+use Illuminate\Contracts\Auth\UserProvider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Hash;
@@ -128,11 +129,14 @@ class UserController extends Controller
                 ($found->image)?File::delete($found->image): null;
             }
             ($request->has('password'))?Hash::make($request->password):null; 
+            
             $update = $this->userProvider->update($data , $request->id);
             if ($update){
+                $record = $this->userProvider->show($request->id); 
                 return response()->json([
                     'status'=>true,
-                    'msg'=>'User has been updated .'
+                    'msg'=>'User has been updated .',
+                    'record'=>$record,
                 ]);
             }else {
                  return response()->json([
