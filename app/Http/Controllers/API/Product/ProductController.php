@@ -124,7 +124,7 @@ class ProductController extends Controller
     public function update(UpdateProductRequest $request)
     {
         //prepearing data
-        $data = (array)$request->all(); 
+        $data = (array)$request->except('user_id'); 
         $record =$this->productProvider->show($request->id); 
         if ($record){
             if ($request->has('file')){
